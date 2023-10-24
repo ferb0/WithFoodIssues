@@ -11,7 +11,7 @@ let requestGet = {
 
 export const searchRecepiesByIngredient = (ingredient) => {
     return function (dispatch) {
-        return fetch(URL + `/recipes/findByIngredients?ingredients=${ingredient}`, requestGet)
+        return fetch(URL + `/recipes/complexSearch?includeIngredients=${ingredient}`, requestGet)
             .then(response => {
                 if (!response.ok) throw Error(response.status)
                 return response.json()
