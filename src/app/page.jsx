@@ -1,7 +1,10 @@
+"use client"
+import ResultList from "./result_list/result_list.jsx"
+
 export default function Home() {
   return (
     <main>
-      <h1>With Food issues</h1>
+      <ResultList />
     </main>
   )
 }
