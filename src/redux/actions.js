@@ -1,5 +1,6 @@
 export const GET_RESULT_INGREDIENTS = 'GET_RESULT_INGREDIENTS'
 export const GET_RESULT_INFORMATION = 'GET_RESULT_INFORMATION'
+export const CLEAN_RESULT_INFORMATION = 'CLEAN_RESULT_INFORMATION'
 
 const URL = process.env.NEXT_PUBLIC_API_BASE_URL
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY
@@ -35,4 +36,8 @@ export const searchRecepiesInformation = (id) => {
             })
             .catch(() => dispatch({ type: GET_RESULT_INFORMATION, payload: false }));
     }
+}
+
+export const cleanRecepiesInformation = () => {
+    return { type: CLEAN_RESULT_INFORMATION }
 }

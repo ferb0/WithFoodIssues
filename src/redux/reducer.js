@@ -1,4 +1,8 @@
-import { GET_RESULT_INFORMATION, GET_RESULT_INGREDIENTS } from '../redux/actions.js'
+import {
+    CLEAN_RESULT_INFORMATION,
+    GET_RESULT_INFORMATION,
+    GET_RESULT_INGREDIENTS
+} from '../redux/actions.js'
 
 const defaultState = {
     recepieInfo: {},
@@ -21,6 +25,11 @@ const defaultReducer = (state = defaultState, action) => {
             return {
                 ...state,
                 recepieInfo: action.payload
+            }
+        case CLEAN_RESULT_INFORMATION:
+            return {
+                ...state,
+                recepieInfo: {}
             }
         default:
             return state
