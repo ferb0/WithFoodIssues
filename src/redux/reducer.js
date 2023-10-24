@@ -20,7 +20,7 @@ const defaultReducer = (state = defaultState, action) => {
         case GET_RESULT_INFORMATION:
             return {
                 ...state,
-                recepiInfo: action.payload
+                recepieInfo: action.payload
             }
         default:
             return state
