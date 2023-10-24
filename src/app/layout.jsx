@@ -1,3 +1,8 @@
+import { ThemeProvider } from '@mui/material/styles'
+import theme from '../global_objects/theme.js'
+
+import NavBar from "./nav_bar.jsx"
+
 export const metadata = {
   title: 'With Food Issues',
   description: 'Created by FerB with Next.',
@@ -6,7 +11,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <ThemeProvider theme={theme}>
+        <body>
+          <NavBar />
+          {children}
+        </body>
+      </ThemeProvider>
     </html>
   )
 }
