@@ -1,25 +1,26 @@
-const URL_API = process.env.API_BASE_URL
-const API_KEY = process.env.API_KEY
-const URL = require('url').URL
+import { URL } from 'url'
 
-let requestGet = {
+const URL_API = process.env.API_BASE_URL
+
+const requestGet = {
     headers: {
         'Content-Type': 'application/json',
-        'x-api-key': API_KEY
+        'x-api-key': process.env.API_KEY
     },
     method: 'GET'
 }
 
-export async function GET(request, { params }) {
+export async function GET(request) {
     const { searchParams } = new URL(request.url)
-    const ingredient = searchParams.get('Ingredients')
+    const ingredients = searchParams.get('Ingredients')
+
     try {
-        const response = await fetch(URL_API + `/recipes/complexSearch?includeIngredients=${ingredient}`, requestGet)
+        const response = await fetch(URL_API + `/recipes/complexSearch?includeIngredients=${ingredients}`, requestGet)
         const data = await response.json()
-        
+
         return Response.json(data)
-    } catch (error) {
+    }
+    catch (error) {
         return Response.json(error)
     }
-
 }
