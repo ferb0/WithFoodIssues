@@ -12,7 +12,7 @@ export default function ResultList() {
 
     useEffect(() => {
         if (search)
-            fetch(`/api/recipes?Ingredients=${search}`)
+            fetch(`/api/search_recipes?Ingredients=${search}`)
                 .then(response => {
                     if (!response.ok) throw Error(response.status)
                     return response.json()
