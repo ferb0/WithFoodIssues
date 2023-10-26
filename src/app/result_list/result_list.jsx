@@ -1,6 +1,7 @@
 'use client'
 
-import { Container, Grid } from '@mui/material'
+import { Container, Grid, Pagination } from '@mui/material'
+
 import Results from './results.jsx'
 
 import { useContext, useEffect, useState } from 'react'
@@ -10,6 +11,10 @@ export default function ResultList() {
     let search = useContext(searchContext).search
     let [results, setResults] = useState([])
 
+    const changePage = (event, value) => {
+        console.log(value)
+    }
+
     useEffect(() => {
         if (search)
             fetch(`/api/search_recipes?Ingredients=${search}`)
@@ -17,7 +22,7 @@ export default function ResultList() {
                     if (!response.ok) throw Error(response.status)
                     return response.json()
                 })
-                .then((response) => setResults(response))
+                .then((response) => setResults(response.results))
                 .catch(() => setResults([]))
     }, [search])
 
@@ -26,7 +31,7 @@ export default function ResultList() {
             <Grid
                 container
                 spacing={2}>
-                {results.results?.map(el =>
+                {results?.map(el =>
                     <Grid
                         item
                         key={el.id}
@@ -34,6 +39,16 @@ export default function ResultList() {
                         <Results key={el.id} element={el} />
                     </Grid>)}
             </Grid>
+            {results.length != 0 ? 
+            <Pagination
+                count={10} page={0} onChange={changePage}
+                sx={{
+                    paddingTop: "1rem",
+                    display: 'flex',
+                    justifyContent: 'center'
+                }} />
+                :
+                null}
         </Container>
     )
 }
