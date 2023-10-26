@@ -1,14 +1,6 @@
 import { URL } from 'url'
-
+import { requestGet } from '../requestAPI.js'
 const URL_API = process.env.API_BASE_URL
-
-const requestGet = {
-    headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': process.env.API_KEY
-    },
-    method: 'GET'
-}
 
 export async function GET(request) {
     const { searchParams } = new URL(request.url)
