@@ -1,9 +1,9 @@
-"use client"
+'use client'
 import { ThemeProvider } from '@mui/material/styles'
 import theme from '../global_objects/theme.js'
 
-import { Provider } from 'react-redux'
-import store from '../redux/store.js'
+import { useState } from 'react'
+import { searchContext } from '../context/search_context.js'
 
 import NavBar from "./nav_bar.jsx"
 
@@ -13,16 +13,23 @@ import NavBar from "./nav_bar.jsx"
 // }
 
 export default function RootLayout({ children }) {
+  let [search, setSearch] = useState()
+  let [results, setResults] = useState([])
+
   return (
     <html lang="en">
-      <Provider store={store}>
-        <ThemeProvider theme={theme}>
-          <body>
-            <NavBar />
-            {children}
-          </body>
-        </ThemeProvider>
-      </Provider>
+      <searchContext.Provider
+        value={{ search, setSearch, results, setResults }}
+      >
+
+          <ThemeProvider theme={theme}>
+            <body>
+              <NavBar />
+              {children}
+            </body>
+          </ThemeProvider>
+
+      </searchContext.Provider>
     </html>
   )
 }
