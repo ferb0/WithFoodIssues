@@ -1,29 +1,29 @@
 'use client'
 import { usePathname } from 'next/navigation'
-// import { useEffect } from 'react';
-// import { cleanRecepiesInformation, searchRecepiesInformation } from '@/redux/actions';
-//import { useDispatch, useSelector } from 'react-redux';
-import { Typography } from '@mui/material';
+import { Typography } from '@mui/material'
+import { useEffect, useState } from 'react'
 
 export default function DetailResult() {
     const path = usePathname()
     // Tengo que limpiar el path para solo quedarme con el id.
     const id = path.split('/').slice(-1)[0]
+    let [info, setInfo] = useState({})
 
-    //const information = useSelector(state => state.recepieInfo)
-
-    // useEffect(() => {
-    //     dispatch(searchRecepiesInformation(id))
-    //     return function () {
-    //         dispatch(cleanRecepiesInformation())
-    //     }
-    // }, [dispatch, id])
+    useEffect(() => {
+        fetch(`/api/info_recipe?id=${id}`)
+            .then(response => {
+                if (!response.ok) throw Error(response.status)
+                return response.json()
+            })
+            .then((response) => setInfo(response.data))
+            .catch(() => setInfo({}))
+    }, [])
 
     return (
         <div>
-            <h2>{information.title}</h2>
-            <Typography 
-            dangerouslySetInnerHTML={{ __html: information.summary }} />
+            <h2>{info.title}</h2>
+            <Typography
+                dangerouslySetInnerHTML={{ __html: info.summary }} />
         </div>
     )
 }
