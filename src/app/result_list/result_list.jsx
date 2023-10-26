@@ -1,18 +1,32 @@
-import { useSelector } from 'react-redux'
+'use client'
 
 import { Container, Grid } from '@mui/material'
 import Results from './results.jsx'
 
-export default function ResultList() {
+import { useContext, useEffect, useState } from 'react'
+import { searchContext } from '@/context/search_context.js'
 
-    let results = useSelector(state => state.results.results)
+export default function ResultList() {
+    let search = useContext(searchContext).search
+    let [results, setResults] = useState([])
+
+    useEffect(() => {
+        if (search)
+            fetch(`/api/recipes?Ingredients=${search}`)
+                .then(response => {
+                    if (!response.ok) throw Error(response.status)
+                    return response.json()
+                })
+                .then((response) => setResults(response))
+                .catch(() => setResults([]))
+    }, [search])
 
     return (
         <Container sx={{ padding: '1rem' }}>
             <Grid
                 container
                 spacing={2}>
-                {results?.map(el =>
+                {results.results?.map(el =>
                     <Grid
                         item
                         key={el.id}
