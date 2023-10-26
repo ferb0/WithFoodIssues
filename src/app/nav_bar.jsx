@@ -1,19 +1,16 @@
-"use client"
-
 import * as React from 'react'
-import { useDispatch } from 'react-redux'
 
 import { AppBar, Box, Toolbar, Typography, IconButton, TextField } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 
-import { searchRecepiesByIngredient } from '../redux/actions.js'
-
 import { styleTextInput } from '../global_objects/theme.js'
+
+import { useContext } from 'react'
+import { searchContext } from '../context/search_context.js'
 
 export default function NavBar() {
   const [input, setInput] = React.useState("")
-
-  const dispatch = useDispatch()
+  const search = useContext(searchContext)
 
   function handleOnChange(event) {
     setInput(event.target.value)
@@ -21,8 +18,8 @@ export default function NavBar() {
 
   function handleSubmit(event) {
     if (event.key === "Enter") {
-      event.preventDefault();
-      dispatch(searchRecepiesByIngredient(input));
+      event.preventDefault()
+      search.setSearch(input)
     }
   }
 
