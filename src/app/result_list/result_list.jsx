@@ -7,23 +7,21 @@ import Results from './results.jsx'
 import { useContext, useEffect, useState } from 'react'
 import { searchContext } from '@/context/search_context.js'
 
+import getRecipes from './get_data.js'
+
 export default function ResultList() {
     let search = useContext(searchContext).search
     let [results, setResults] = useState([])
+    let [page, setPage] = useState(1)
 
     const changePage = (event, value) => {
-        console.log(value)
+        setPage(value)
+        getRecipes(search, setResults, value * results.number)
     }
 
     useEffect(() => {
         if (search)
-            fetch(`/api/search_recipes?Ingredients=${search}`)
-                .then(response => {
-                    if (!response.ok) throw Error(response.status)
-                    return response.json()
-                })
-                .then((response) => setResults(response.results))
-                .catch(() => setResults([]))
+            getRecipes(search, setResults)
     }, [search])
 
     return (
@@ -31,7 +29,7 @@ export default function ResultList() {
             <Grid
                 container
                 spacing={2}>
-                {results?.map(el =>
+                {results.results?.map(el =>
                     <Grid
                         item
                         key={el.id}
@@ -39,14 +37,16 @@ export default function ResultList() {
                         <Results key={el.id} element={el} />
                     </Grid>)}
             </Grid>
-            {results.length != 0 ? 
-            <Pagination
-                count={10} page={0} onChange={changePage}
-                sx={{
-                    paddingTop: "1rem",
-                    display: 'flex',
-                    justifyContent: 'center'
-                }} />
+            {results.length != 0 ?
+                <Pagination
+                    count={Math.ceil(results.totalResults / results.number)}
+                    page={page}
+                    onChange={changePage}
+                    sx={{
+                        paddingTop: "1rem",
+                        display: 'flex',
+                        justifyContent: 'center'
+                    }} />
                 :
                 null}
         </Container>
