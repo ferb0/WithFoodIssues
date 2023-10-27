@@ -9,19 +9,26 @@ import { searchContext } from '@/context/search_context.js'
 
 import getRecipes from './get_data.js'
 
+import { URL } from 'url'
+import { useSearchParams, useRouter } from 'next/navigation'
+
 export default function ResultList() {
-    let search = useContext(searchContext).search
-    let [results, setResults] = useState([])
-    let [page, setPage] = useState(1)
+    let { search, results, setResults } = useContext(searchContext)
+
+    const router = useRouter()
+    const searchParams = useSearchParams()
+
+    let [page, setPage] = useState(searchParams.get('page'))
 
     const changePage = (event, value) => {
         setPage(value)
         getRecipes(search, setResults, value * results.number)
+        router.push(`?page=${value}`)
     }
 
     useEffect(() => {
         if (search)
-            getRecipes(search, setResults)
+            getRecipes(search, setResults, results.number ? page * results.number : 0)
     }, [search])
 
     return (
@@ -40,7 +47,7 @@ export default function ResultList() {
             {results.length != 0 ?
                 <Pagination
                     count={Math.ceil(results.totalResults / results.number)}
-                    page={page}
+                    page={page ? parseInt(page) : 1}
                     onChange={changePage}
                     sx={{
                         paddingTop: "1rem",
