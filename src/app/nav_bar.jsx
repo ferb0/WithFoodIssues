@@ -6,7 +6,7 @@ import { styleTextInput } from '../global_objects/theme.js'
 
 import { useContext } from 'react'
 import { searchContext } from '../context/search_context.js'
-import { OptionsMenu } from './option_menu.jsx'
+import { OptionsMenu } from './menu/option_menu.jsx'
 
 export default function NavBar() {
   const [input, setInput] = React.useState("")
