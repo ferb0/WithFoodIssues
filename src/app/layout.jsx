@@ -19,16 +19,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <searchContext.Provider
-        value={{ search, setSearch, results, setResults }}
-      >
-
-          <ThemeProvider theme={theme}>
-            <body>
-              <NavBar />
-              {children}
-            </body>
-          </ThemeProvider>
-
+        value={{ search, setSearch, results, setResults }}>
+        <ThemeProvider theme={theme}>
+          <body>
+            <NavBar />
+            {children}
+          </body>
+        </ThemeProvider>
       </searchContext.Provider>
     </html>
   )
