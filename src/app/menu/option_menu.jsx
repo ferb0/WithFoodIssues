@@ -1,7 +1,6 @@
 import * as React from 'react'
-import { IconButton, Stack, Menu, MenuItem, Button, Typography } from '@mui/material'
+import { Stack, Menu, Button } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { ItemDiet } from './item_diet'
 
 export const OptionsMenu = () => {
@@ -24,11 +23,7 @@ export const OptionsMenu = () => {
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
-                endIcon={<KeyboardArrowDownIcon />}>
-                <Typography variant="h7"
-                    sx={{ color: 'black' }}>
-                    Options
-                </Typography>
+                endIcon={<MenuIcon sx={{ color: 'black' }} />}>
             </Button>
             <Menu
                 id="option-menu"
