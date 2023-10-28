@@ -1,6 +1,8 @@
 import * as React from 'react'
-import { IconButton, Stack, Menu, MenuItem } from '@mui/material'
+import { IconButton, Stack, Menu, MenuItem, Button, Typography } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import { ItemDiet } from './item_diet'
 
 export const OptionsMenu = () => {
     const [anchorEl, setAnchorEl] = React.useState(null)
@@ -16,20 +18,18 @@ export const OptionsMenu = () => {
 
     return (
         <Stack>
-            <IconButton
-                size="large"
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-                sx={{ mr: 2 }}>
-                <MenuIcon
-                    id="menuu-button"
-                    aria-controls={open ? 'option-menu' : undefined}
-                    aria-haspopup="true"
-                    aria-expanded={open ? 'true' : undefined}
-                    onClick={handleClick} />
-            </IconButton>
-
+            <Button
+                id="menuu-button"
+                aria-controls={open ? 'option-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? 'true' : undefined}
+                onClick={handleClick}
+                endIcon={<KeyboardArrowDownIcon />}>
+                <Typography variant="h7"
+                    sx={{ color: 'black' }}>
+                    Options
+                </Typography>
+            </Button>
             <Menu
                 id="option-menu"
                 anchorEl={anchorEl}
@@ -38,9 +38,7 @@ export const OptionsMenu = () => {
                 MenuListProps={{
                     'aria-labelledby': 'menuu-button'
                 }}>
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
-                <MenuItem onClick={handleClose}>Logout</MenuItem>
+                <ItemDiet />
             </Menu>
         </Stack>
     )
