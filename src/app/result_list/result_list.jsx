@@ -1,19 +1,18 @@
 'use client'
 
+import { useContext, useState, useEffect } from 'react'
+import { useSearchParams, useRouter } from 'next/navigation'
+
 import { Container, Grid, Pagination } from '@mui/material'
 
 import Results from './results.jsx'
 
-import { useContext, useEffect, useState } from 'react'
 import { searchContext } from '@/context/search_context.js'
 
 import getRecipes from './get_data.js'
 
-import { URL } from 'url'
-import { useSearchParams, useRouter } from 'next/navigation'
-
 export default function ResultList() {
-    let { search, results, setResults } = useContext(searchContext)
+    let { search, results, setResults, dietOption } = useContext(searchContext)
 
     const router = useRouter()
     const searchParams = useSearchParams()
@@ -30,6 +29,14 @@ export default function ResultList() {
         if (search)
             getRecipes(search, setResults, results.number ? page * results.number : 0)
     }, [search])
+
+    useEffect(() => {
+        const options = { diet: dietOption }
+
+        if (search)
+            getRecipes(search, setResults, results.number ? page * results.number : 0,
+                options)
+    }, [dietOption])
 
     return (
         <Container sx={{ padding: '1rem' }}>

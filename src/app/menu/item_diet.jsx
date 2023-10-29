@@ -5,7 +5,16 @@ import { searchContext } from '../../context/search_context.js'
 
 const dietOptions = [
     'Gluten Free',
-    'Ketogenic'
+    'Ketogenic',
+    'Vegetarian',
+    'Lacto-Vegetarian',
+    'Ovo-Vegetarian',
+    'Vegan',
+    'Pescetarian',
+    'Paleo',
+    'Primal',
+    'Low FODMAP',
+    'Whole30'
 ]
 
 export const ItemDiet = () => {
@@ -17,14 +26,14 @@ export const ItemDiet = () => {
     }
 
     const setSelection = (event, newValue) => {
-        setDietOption(newValue)
+        if (dietOptions.includes(newValue) || !newValue)
+            setDietOption(newValue)
     }
 
     return (
         <MenuItem onClick={handleClose}>
             <Autocomplete
                 onInputChange={setSelection}
-                disablePortal
                 options={dietOptions}
                 renderInput={(params) => <TextField {...params} label="Options" />}
                 inputValue={dietOption}
