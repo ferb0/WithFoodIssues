@@ -14,6 +14,8 @@ import getRecipes from './get_data.js'
 export default function ResultList() {
     let { search, results, setResults, dietOption } = useContext(searchContext)
 
+    const options = { diet: dietOption }
+
     const router = useRouter()
     const searchParams = useSearchParams()
 
@@ -27,16 +29,8 @@ export default function ResultList() {
 
     useEffect(() => {
         if (search)
-            getRecipes(search, setResults, results.number ? page * results.number : 0)
-    }, [search])
-
-    useEffect(() => {
-        const options = { diet: dietOption }
-
-        if (search)
-            getRecipes(search, setResults, results.number ? page * results.number : 0,
-                options)
-    }, [dietOption])
+            getRecipes(search, setResults, results.number ? page * results.number : 0, options)
+    }, [search, dietOption])
 
     return (
         <Container sx={{ padding: '1rem' }}>
