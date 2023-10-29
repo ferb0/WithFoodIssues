@@ -15,11 +15,16 @@ import NavBar from "./nav_bar.jsx"
 export default function RootLayout({ children }) {
   let [search, setSearch] = useState()
   let [results, setResults] = useState([])
+  let [dietOption, setDietOption] = useState('')
 
   return (
     <html lang="en">
       <searchContext.Provider
-        value={{ search, setSearch, results, setResults }}>
+        value={{
+          search, setSearch,
+          results, setResults,
+          dietOption, setDietOption
+        }}>
         <ThemeProvider theme={theme}>
           <body>
             <NavBar />
