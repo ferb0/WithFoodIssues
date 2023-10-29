@@ -10,16 +10,12 @@ import { OptionsMenu } from './menu/option_menu.jsx'
 
 export default function NavBar() {
   const [input, setInput] = React.useState("")
-  const search = useContext(searchContext)
-
-  function handleOnChange(event) {
-    setInput(event.target.value)
-  }
+  const { setSearch } = useContext(searchContext)
 
   function handleSubmit(event) {
     if (event.key === "Enter") {
       event.preventDefault()
-      search.setSearch(input)
+      setSearch(input)
     }
   }
 
@@ -27,7 +23,7 @@ export default function NavBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
         <Toolbar>
-          <OptionsMenu/>
+          <OptionsMenu />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             With Food Issues
           </Typography>
@@ -38,7 +34,7 @@ export default function NavBar() {
             id="outlined-basic"
             label="Search"
             variant="outlined"
-            onChange={handleOnChange}
+            onChange={() => setInput(event.target.value)}
             onKeyPress={handleSubmit}
             value={input} />
 
