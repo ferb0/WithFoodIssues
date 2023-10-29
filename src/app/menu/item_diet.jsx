@@ -2,20 +2,7 @@ import * as React from 'react'
 import { Autocomplete, MenuItem, TextField } from '@mui/material'
 
 import { searchContext } from '../../context/search_context.js'
-
-const dietOptions = [
-    'Gluten Free',
-    'Ketogenic',
-    'Vegetarian',
-    'Lacto-Vegetarian',
-    'Ovo-Vegetarian',
-    'Vegan',
-    'Pescetarian',
-    'Paleo',
-    'Primal',
-    'Low FODMAP',
-    'Whole30'
-]
+import { dietOptions } from '@/global_objects/recipes_options.js'
 
 export const ItemDiet = () => {
     const [anchorEl, setAnchorEl] = React.useState(null)
