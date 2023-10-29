@@ -26,13 +26,14 @@ export const ItemDiet = () => {
     }
 
     const setSelection = (event, newValue) => {
-        if (dietOptions.includes(newValue) || !newValue)
-            setDietOption(newValue)
+        setDietOption(newValue)
     }
 
     return (
         <MenuItem onClick={handleClose}>
             <Autocomplete
+                autoSelect
+                freeSolo
                 onInputChange={setSelection}
                 options={dietOptions}
                 renderInput={(params) => <TextField {...params} label="Options" />}
