@@ -4,13 +4,16 @@ import MenuIcon from '@mui/icons-material/Menu'
 import { OptionItem } from './item_menu.jsx'
 
 import { searchContext } from '../../context/search_context.js'
-import { dietOptions } from '@/global_objects/recipes_options.js'
+import { dietOptions, IntolerancesOptions } from '@/global_objects/recipes_options.js'
 
 export const OptionsMenu = () => {
     const [anchorEl, setAnchorEl] = React.useState(null)
     const open = Boolean(anchorEl)
 
-    const { dietOption, setDietOption } = React.useContext(searchContext)
+    const {
+        dietOption, setDietOption,
+        intolerancesOption, setIntolerancesOption
+    } = React.useContext(searchContext)
 
     return (
         <Stack>
@@ -35,6 +38,11 @@ export const OptionsMenu = () => {
                     setValue={setDietOption}
                     label={'Options Diet'}
                     options={dietOptions} />
+                <OptionItem
+                    value={intolerancesOption}
+                    setValue={setIntolerancesOption}
+                    label={'Options Intolerance'}
+                    options={IntolerancesOptions} />
             </Menu>
         </Stack>
     )
