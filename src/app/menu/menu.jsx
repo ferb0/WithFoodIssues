@@ -15,7 +15,7 @@ export const OptionsMenu = () => {
     return (
         <Stack>
             <Button
-                id="menuu-button"
+                id="menu-button"
                 aria-controls={open ? 'option-menu' : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
@@ -28,7 +28,7 @@ export const OptionsMenu = () => {
                 open={open}
                 onClose={() => { setAnchorEl(null) }}
                 MenuListProps={{
-                    'aria-labelledby': 'menuu-button'
+                    'aria-labelledby': 'menu-button'
                 }}>
                 <OptionItem
                     value={dietOption}
