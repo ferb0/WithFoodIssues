@@ -1,19 +1,16 @@
 import * as React from 'react'
 import { Stack, Menu, Button } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
-import { ItemMenu } from './item_menu.jsx'
+import { OptionItem } from './item_menu.jsx'
+
+import { searchContext } from '../../context/search_context.js'
+import { dietOptions } from '@/global_objects/recipes_options.js'
 
 export const OptionsMenu = () => {
     const [anchorEl, setAnchorEl] = React.useState(null)
     const open = Boolean(anchorEl)
 
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    }
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    }
+    const { dietOption, setDietOption } = React.useContext(searchContext)
 
     return (
         <Stack>
@@ -22,18 +19,22 @@ export const OptionsMenu = () => {
                 aria-controls={open ? 'option-menu' : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
-                onClick={handleClick}
+                onClick={(event) => { setAnchorEl(event.currentTarget) }}
                 endIcon={<MenuIcon sx={{ color: 'black' }} />}>
             </Button>
             <Menu
                 id="option-menu"
                 anchorEl={anchorEl}
                 open={open}
-                onClose={handleClose}
+                onClose={() => { setAnchorEl(null) }}
                 MenuListProps={{
                     'aria-labelledby': 'menuu-button'
                 }}>
-                <ItemMenu />
+                <OptionItem
+                    value={dietOption}
+                    setValue={setDietOption}
+                    label={'Options Diet'}
+                    options={dietOptions} />
             </Menu>
         </Stack>
     )
