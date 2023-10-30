@@ -16,6 +16,7 @@ export default function RootLayout({ children }) {
   let [search, setSearch] = useState()
   let [results, setResults] = useState([])
   let [dietOption, setDietOption] = useState('')
+  let [intolerancesOption, setIntolerancesOption] = useState('')
 
   return (
     <html lang="en">
@@ -23,7 +24,8 @@ export default function RootLayout({ children }) {
         value={{
           search, setSearch,
           results, setResults,
-          dietOption, setDietOption
+          dietOption, setDietOption,
+          intolerancesOption, setIntolerancesOption
         }}>
         <ThemeProvider theme={theme}>
           <body>
