@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Stack, Menu, Button } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
-import { ItemDiet } from './item_diet'
+import { ItemMenu } from './item_menu.jsx'
 
 export const OptionsMenu = () => {
     const [anchorEl, setAnchorEl] = React.useState(null)
@@ -33,7 +33,7 @@ export const OptionsMenu = () => {
                 MenuListProps={{
                     'aria-labelledby': 'menuu-button'
                 }}>
-                <ItemDiet />
+                <ItemMenu />
             </Menu>
         </Stack>
     )

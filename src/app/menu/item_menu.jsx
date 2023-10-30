@@ -4,7 +4,7 @@ import { Autocomplete, MenuItem, TextField } from '@mui/material'
 import { searchContext } from '../../context/search_context.js'
 import { dietOptions } from '@/global_objects/recipes_options.js'
 
-export const ItemDiet = () => {
+export const ItemMenu = () => {
     const { dietOption, setDietOption } = React.useContext(searchContext)
 
     const setSelection = (event, newValue) => {
@@ -18,7 +18,7 @@ export const ItemDiet = () => {
                 freeSolo
                 onInputChange={setSelection}
                 options={dietOptions}
-                renderInput={(params) => <TextField {...params} label="Options" />}
+                renderInput={(params) => <TextField {...params} label="Options Diet" />}
                 inputValue={dietOption}
                 sx={{ width: 300 }} />
         </MenuItem>
