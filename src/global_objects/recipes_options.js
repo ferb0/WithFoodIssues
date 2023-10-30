@@ -12,7 +12,7 @@ export const dietOptions = [
     'Whole30'
 ]
 
-export const IntolerancesOptions = [
+export const intolerancesOptions = [
     'Dairy',
     'Egg',
     'Gluten',
