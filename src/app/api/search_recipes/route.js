@@ -1,11 +1,10 @@
-import { URL } from 'url'
-import { requestGet } from '../requestAPI.js'
 const URL_API = process.env.API_BASE_URL
+import getParams from '../controllers/get_params.js'
+import { requestGet } from '../requestAPI.js'
 
 export async function GET(request) {
-    const { searchParams } = new URL(request.url)
-    const ingredients = searchParams.get('ingredients')
-    const offSet = searchParams.get('offSet')
+    const ingredients = getParams(request, 'ingredients')
+    const offSet = getParams(request, 'offSet')
 
     try {
         const response = await fetch(URL_API + `/recipes/complexSearch?includeIngredients=${ingredients}&offset=${offSet}`, requestGet)
