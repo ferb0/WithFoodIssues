@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { searchContext } from '../context/search_context.js'
 
 import NavBar from "./nav_bar.jsx"
+import Footer from './footer.jsx'
 
 // export const metadata = {
 //   title: 'With Food Issues',
@@ -17,7 +18,7 @@ export default function RootLayout({ children }) {
   let [results, setResults] = useState([])
   let [dietOption, setDietOption] = useState('')
   let [intolerancesOption, setIntolerancesOption] = useState('')
-  let [cuisineOption, setCuisineOption ] = useState('')
+  let [cuisineOption, setCuisineOption] = useState('')
 
   return (
     <html lang="en">
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
           <body>
             <NavBar />
             {children}
+            <Footer />
           </body>
         </ThemeProvider>
       </searchContext.Provider>
