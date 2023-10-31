@@ -2,7 +2,8 @@ import { optionsControl } from "./options_control"
 
 export function getRecipes(search, setResults, offSet = 0, options = {}) {
     let URL = `/api/search_recipes?ingredients=${search}&offSet=${offSet}`
-
+    
+    // Se controla que las opciones sean las correctas.
     options = optionsControl(options)
 
     // Se convierte opciones enquery.
