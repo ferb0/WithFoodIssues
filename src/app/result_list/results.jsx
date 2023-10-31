@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { Card, Typography, CardMedia, CardActions, Button, CardContent } from '@mui/material'
 
+import { linkTheme } from '@/global_objects/theme'
+
 export default function Results(props) {
     let { id, title, image, summary } = props.element
 
@@ -19,7 +21,9 @@ export default function Results(props) {
                     dangerouslySetInnerHTML={{ __html: summary }} />
             </CardContent>
             <CardActions>
-                <Button size="small"><Link href={`/detail/${id}`}>Detalles</Link></Button>
+                <Button size="small">
+                    <Link href={`/detail/${id}`} style={linkTheme}>Detalles</Link>
+                    </Button>
             </CardActions>
         </Card>
     )
