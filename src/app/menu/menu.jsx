@@ -37,17 +37,17 @@ export const OptionsMenu = () => {
                 <OptionItem
                     value={dietOption}
                     setValue={setDietOption}
-                    label={'Options Diet'}
+                    label={'Diet Options'}
                     options={dietOptions} />
                 <OptionItem
                     value={intolerancesOption}
                     setValue={setIntolerancesOption}
-                    label={'Options Intolerance'}
+                    label={'Intolerance Options'}
                     options={intolerancesOptions} />
                 <OptionItem
                     value={cuisineOption}
                     setValue={setCuisineOption}
-                    label={'Options Cousine'}
+                    label={'Cousine Options'}
                     options={cuisineOptions} />
             </Menu>
         </Stack>
