@@ -40,15 +40,15 @@ export const OptionsMenu = () => {
                     label={'Diet Options'}
                     options={dietOptions} />
                 <OptionItem
-                    value={intolerancesOption}
-                    setValue={setIntolerancesOption}
-                    label={'Intolerance Options'}
-                    options={intolerancesOptions} />
-                <OptionItem
                     value={cuisineOption}
                     setValue={setCuisineOption}
                     label={'Cousine Options'}
                     options={cuisineOptions} />
+                <OptionItem
+                    value={intolerancesOption}
+                    setValue={setIntolerancesOption}
+                    label={'Intolerance Options'}
+                    options={intolerancesOptions} />
             </Menu>
         </Stack>
     )
