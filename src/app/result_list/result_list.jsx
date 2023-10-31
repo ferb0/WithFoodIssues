@@ -9,7 +9,7 @@ import Results from './results.jsx'
 
 import { searchContext } from '@/context/search_context.js'
 
-import getRecipes from './get_data.js'
+import { getRecipes } from './get_data.js'
 
 export default function ResultList() {
     let { search,

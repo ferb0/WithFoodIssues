@@ -1,6 +1,6 @@
 import { optionsControl } from "./options_control"
 
-export default function getRecipes(search, setResults, offSet = 0, options = {}) {
+export function getRecipes(search, setResults, offSet = 0, options = {}) {
     let URL = `/api/search_recipes?ingredients=${search}&offSet=${offSet}`
 
     options = optionsControl(options)
