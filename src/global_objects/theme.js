@@ -45,4 +45,9 @@ export const styleTextInput = {
     }
 };
 
+export const linkTheme = {
+    textDecoration: 'none',
+    color: 'black'
+}
+
 export default theme
