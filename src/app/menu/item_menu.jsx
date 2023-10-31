@@ -9,9 +9,9 @@ export const OptionItem = (props) => {
                 freeSolo
                 onInputChange={(event, newValue) => { props.setValue(newValue) }}
                 options={props.options}
-                renderInput={(params) => <TextField {...params} label={props.label} />}
+                renderInput={(params) => <TextField {...params} size='small' label={props.label} />}
                 inputValue={props.value}
-                sx={{ width: 300 }} />
+                sx={{ width: '12rem' }} />
         </MenuItem>
     )
 }
