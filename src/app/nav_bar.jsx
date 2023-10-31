@@ -2,11 +2,12 @@ import * as React from 'react'
 
 import { AppBar, Box, Toolbar, Typography, TextField } from '@mui/material'
 
-import { styleTextInput } from '../global_objects/theme.js'
+import { linkTheme, styleTextInput } from '../global_objects/theme.js'
 
 import { useContext } from 'react'
 import { searchContext } from '../context/search_context.js'
 import { OptionsMenu } from './menu/menu.jsx'
+import Link from 'next/link.js'
 
 export default function NavBar() {
   const [input, setInput] = React.useState('')
@@ -25,7 +26,7 @@ export default function NavBar() {
         <Toolbar>
           <OptionsMenu />
           <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-            With Food Issues
+            <Link href={'/'} style={linkTheme}>With Food Issues</Link>
           </Typography>
 
           <TextField
