@@ -13,7 +13,7 @@ export default function ResultList() {
     const router = useRouter()
     const searchParams = useSearchParams()
 
-    let [results, setResults] = useState([[]])
+    let [results, setResults] = useState({ results: [] })
 
     const page = searchParams.get('page')
     const search = searchParams.get('search')
@@ -41,7 +41,7 @@ export default function ResultList() {
                         <Results key={el.id} element={el} />
                     </Grid>)}
             </Grid>
-            {/* {results.length != 0 ?
+            {results.results.length != 0 ?
                 <Pagination
                     count={Math.ceil(results.totalResults / results.number)}
                     page={page ? parseInt(page) : 1}
@@ -52,7 +52,7 @@ export default function ResultList() {
                         justifyContent: 'center'
                     }} />
                 :
-                null} */}
+                null}
         </Container>
     )
 }
