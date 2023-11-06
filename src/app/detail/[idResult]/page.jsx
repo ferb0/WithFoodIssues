@@ -10,7 +10,7 @@ export default function DetailResult() {
     let [info, setInfo] = useState({})
 
     useEffect(() => {
-        fetch(`/api/info_recipe?id=${id}`)
+        fetch(`/api/info_recipe/${id}`)
             .then(response => {
                 if (!response.ok) throw Error(response.status)
                 return response.json()
