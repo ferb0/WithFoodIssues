@@ -1,4 +1,4 @@
-import ResultList from "./result_list/result_list.jsx"
+import ResultList from "./results_list/page.jsx"
 
 export default function Home() {
   return (
