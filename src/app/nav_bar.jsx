@@ -1,22 +1,19 @@
 import * as React from 'react'
+import Link from 'next/link.js'
+import { useRouter } from 'next/navigation'
+import { OptionsMenu } from './menu/menu.jsx'
 
 import { AppBar, Box, Toolbar, Typography, TextField } from '@mui/material'
-
 import { linkTheme, styleTextInput } from '../global_objects/theme.js'
-
-import { useContext } from 'react'
-import { searchContext } from '../context/search_context.js'
-import { OptionsMenu } from './menu/menu.jsx'
-import Link from 'next/link.js'
 
 export default function NavBar() {
   const [input, setInput] = React.useState('')
-  const { setSearch } = useContext(searchContext)
+  const route = useRouter()
 
   function handleSubmit(event) {
     if (event.key === 'Enter') {
       event.preventDefault()
-      setSearch(input)
+      route.push(`/results_list?search=${input}`)
     }
   }
 
