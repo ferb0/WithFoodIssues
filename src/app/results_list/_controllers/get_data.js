@@ -1,8 +1,8 @@
 import { optionsControl } from "./options_control"
 
-export function getRecipes(search, setResults, offSet = 0, options = {}) {
+export async function getRecipes(search, offSet = 0, options = {}) {
     let URL = `/api/search_recipes?ingredients=${search}&offSet=${offSet}`
-    
+
     // Se controla que las opciones sean las correctas.
     options = optionsControl(options)
 
@@ -12,12 +12,6 @@ export function getRecipes(search, setResults, offSet = 0, options = {}) {
             URL += `&${property}=${options[property]}`
     }
 
-    console.log('URL', URL)
-    // fetch(URL)
-    //     .then(response => {
-    //         if (!response.ok) throw Error(response.status)
-    //         return response.json()
-    //     })
-    //     .then((response) => setResults(response))
-    //     .catch(() => setResults({ results: [] }))
+    let results = (await fetch(URL)).json()
+    return results
 }
