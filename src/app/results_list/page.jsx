@@ -14,7 +14,7 @@ export default function ResultList() {
     const searchParams = useSearchParams()
 
     let [results, setResults] = useState([[]])
-    console.log(results)
+
     const page = searchParams.get('page')
     const search = searchParams.get('search')
 
