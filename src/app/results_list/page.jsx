@@ -8,21 +8,15 @@ import { Container, Grid, Pagination } from '@mui/material'
 import Results from './results.jsx'
 
 import { getRecipes } from './_controllers/get_data.js'
+import { ResultsPagination } from './results_paginations.jsx'
 
 export default function ResultList() {
     const router = useRouter()
     const searchParams = useSearchParams()
 
     let [results, setResults] = useState({ results: [] })
-    console.log(results)
-    const page = searchParams.get('page')
-    const search = searchParams.get('search')
 
-    const changePage = (event, value) => {
-        console.log(value * results.number)
-        getRecipes(search, value * results.number).then(res => setResults(res))
-        router.push(`/results_list?search=${search}&page=${value}`)
-    }
+    const search = searchParams.get('search')
 
     useEffect(() => {
         if (search)
@@ -42,18 +36,12 @@ export default function ResultList() {
                         <Results key={el.id} element={el} />
                     </Grid>)}
             </Grid>
-            {results.results?.length != 0 ?
-                <Pagination
-                    count={Math.ceil(results.totalResults / results.number)}
-                    page={page ? parseInt(page) : 1}
-                    onChange={changePage}
-                    sx={{
-                        paddingTop: "1rem",
-                        display: 'flex',
-                        justifyContent: 'center'
-                    }} />
-                :
-                null}
+
+            <ResultsPagination 
+            number={results.number} 
+            totalResults={results.totalResults} 
+            setResults={setResults} />
+            
         </Container>
     )
 }
