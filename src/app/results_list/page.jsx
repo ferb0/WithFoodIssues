@@ -14,13 +14,14 @@ export default function ResultList() {
     const searchParams = useSearchParams()
 
     let [results, setResults] = useState({ results: [] })
-
+    console.log(results)
     const page = searchParams.get('page')
     const search = searchParams.get('search')
 
     const changePage = (event, value) => {
-        getRecipes(search, setResults, value * results.number)
-        router.push(`&page=${value}`)
+        console.log(value * results.number)
+        getRecipes(search, value * results.number).then(res => setResults(res))
+        router.push(`/results_list?search=${search}&page=${value}`)
     }
 
     useEffect(() => {
@@ -41,7 +42,7 @@ export default function ResultList() {
                         <Results key={el.id} element={el} />
                     </Grid>)}
             </Grid>
-            {results.results.length != 0 ?
+            {results.results?.length != 0 ?
                 <Pagination
                     count={Math.ceil(results.totalResults / results.number)}
                     page={page ? parseInt(page) : 1}
