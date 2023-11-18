@@ -1,17 +1,15 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useSearchParams, useRouter } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 
-import { Container, Grid, Pagination } from '@mui/material'
+import { Container, Grid } from '@mui/material'
 
+import { ResultsPagination } from './results_paginations.jsx'
 import Results from './results.jsx'
 
 import { getRecipes } from './_controllers/get_data.js'
-import { ResultsPagination } from './results_paginations.jsx'
-
 export default function ResultList() {
-    const router = useRouter()
     const searchParams = useSearchParams()
 
     let [results, setResults] = useState({ results: [] })
@@ -37,11 +35,11 @@ export default function ResultList() {
                     </Grid>)}
             </Grid>
 
-            <ResultsPagination 
-            number={results.number} 
-            totalResults={results.totalResults} 
-            setResults={setResults} />
-            
+            <ResultsPagination
+                number={results.number}
+                totalResults={results.totalResults}
+                setResults={setResults} />
+
         </Container>
     )
 }
