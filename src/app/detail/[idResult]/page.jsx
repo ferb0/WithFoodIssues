@@ -11,12 +11,8 @@ export default function DetailResult() {
 
     useEffect(() => {
         fetch(`/api/info_recipe/${id}`)
-            .then(response => {
-                if (!response.ok) throw Error(response.status)
-                return response.json()
-            })
-            .then((response) => setInfo(response.data))
-            .catch(() => setInfo({}))
+            .then(res => res.json())
+            .then(res => setInfo(res.data))
     }, [])
 
     return (
