@@ -1,12 +1,12 @@
 'use client'
-import { usePathname } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 import { Typography } from '@mui/material'
 import { useEffect, useState } from 'react'
 
 export default function DetailResult() {
-    const path = usePathname()
-    // Tengo que limpiar el path para solo quedarme con el id.
-    const id = path.split('/').slice(-1)[0]
+    const searchParams = useSearchParams()
+    const id = searchParams.get('id')
+
     let [info, setInfo] = useState({})
 
     useEffect(() => {
