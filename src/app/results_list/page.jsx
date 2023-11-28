@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { useSearchParams } from 'next/navigation'
 
 import { Container, Grid } from '@mui/material'
@@ -9,6 +9,8 @@ import { ResultsPagination } from './results_paginations.jsx'
 import Results from './results.jsx'
 
 import { getRecipes } from './_controllers/get_data.js'
+import { searchContext } from '../../context/search_context.js'
+
 export default function ResultList() {
     const searchParams = useSearchParams()
 
@@ -16,9 +18,17 @@ export default function ResultList() {
 
     const search = searchParams.get('search')
 
+    const {
+        dietOption,
+        intolerancesOption,
+        cuisineOption,
+    } = useContext(searchContext)
+
+    const options = { diet: dietOption, intolerances: intolerancesOption, cuisine: cuisineOption }
+
     useEffect(() => {
         if (search)
-            getRecipes(search).then(res => setResults(res))
+            getRecipes(search, options).then(res => setResults(res))
     }, [])
 
     return (

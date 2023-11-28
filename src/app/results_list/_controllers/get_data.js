@@ -1,6 +1,6 @@
 import { optionsControl } from "./options_control"
 
-export async function getRecipes(search, offSet = 0, options = {}) {
+export async function getRecipes(search, options = {}, offSet = 0) {
     let URL = `/api/search_recipes?ingredients=${search}&offSet=${offSet}`
 
     // Se controla que las opciones sean las correctas.

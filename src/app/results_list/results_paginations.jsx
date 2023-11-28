@@ -1,8 +1,10 @@
 import { useSearchParams, useRouter } from 'next/navigation'
+import { useState, useEffect, useContext } from 'react'
 
 import { Pagination } from '@mui/material'
 
 import { getRecipes } from './_controllers/get_data.js'
+import { searchContext } from '../../context/search_context.js'
 
 export const ResultsPagination = (props) => {
     const router = useRouter()
@@ -11,9 +13,17 @@ export const ResultsPagination = (props) => {
     const page = searchParams.get('page')
     const search = searchParams.get('search')
 
+    const {
+        dietOption,
+        intolerancesOption,
+        cuisineOption,
+    } = useContext(searchContext)
+
+    const options = { diet: dietOption, intolerances: intolerancesOption, cuisine: cuisineOption }
+
     const changePage = (event, value) => {
         props.setResults({ results: [] })
-        getRecipes(search, value * props.number).then(res => props.setResults(res))
+        getRecipes(search, options, value * props.number).then(res => props.setResults(res))
         router.push(`/results_list?search=${search}&page=${value}`)
     }
     return (
