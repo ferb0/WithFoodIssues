@@ -14,8 +14,6 @@ import Footer from './footer.jsx'
 // }
 
 export default function RootLayout({ children }) {
-  let [search, setSearch] = useState()
-  let [results, setResults] = useState([])
   let [dietOption, setDietOption] = useState('')
   let [intolerancesOption, setIntolerancesOption] = useState('')
   let [cuisineOption, setCuisineOption] = useState('')
@@ -24,8 +22,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <searchContext.Provider
         value={{
-          search, setSearch,
-          results, setResults,
           dietOption, setDietOption,
           intolerancesOption, setIntolerancesOption,
           cuisineOption, setCuisineOption
