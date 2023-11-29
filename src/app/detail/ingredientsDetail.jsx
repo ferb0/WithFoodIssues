@@ -11,7 +11,7 @@ export const IngredientsDetail = ({ ingredientsArray }) => {
             </Typography>
 
             <Stack spacing={1}>
-                {ingredientsArray?.map(element => <Ingredient ingredient={element} />)}
+                {ingredientsArray?.map(element => <Ingredient key={element.id + element.image} ingredient={element} />)}
             </Stack>
         </Card>
     )
