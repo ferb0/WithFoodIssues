@@ -2,7 +2,6 @@ import { Stack, Typography } from "@mui/material"
 
 export const Ingredient = ({ ingredient }) => {
     const PADDING_SIDE = '3rem'
-    console.log(ingredient)
     return (
         <Stack direction='row'>
             <Typography
