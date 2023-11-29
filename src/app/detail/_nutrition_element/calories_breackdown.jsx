@@ -1,7 +1,6 @@
 import { Stack, Typography } from "@mui/material"
 
-export const CaloriesBreackDown = ({dataCalories}) => {
-    console.log(dataCalories)
+export const CaloriesBreackDown = ({ dataCalories }) => {
     const PADDING_SIDE = '3rem'
     return (
         <Stack direction='row'>
