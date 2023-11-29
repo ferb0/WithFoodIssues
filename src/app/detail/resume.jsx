@@ -4,6 +4,12 @@ export const ResumeDetail = ({ image, summary, source }) => {
     return (
         <Card
             sx={{ padding: '0.5rem' }}>
+            <Typography
+                variant='h5'
+                sx={{ textAlign: 'center' }}>
+                Resume
+            </Typography>
+
             <Grid container spacing={2}>
 
                 <Grid item xs={4}>
