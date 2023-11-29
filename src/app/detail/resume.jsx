@@ -19,12 +19,12 @@ export const ResumeDetail = ({ image, summary, source }) => {
                             src={image}
                             alt='Image recipe' />
                         <Link
-                            href={source ? 'https://www.' + source : ''}
+                            href={source ? source : ''}
                             target='_blank'
                             underline="none"
                             rel="noreferrer"
                             sx={{ display: 'flex', margin: 'auto' }}>
-                            {source}
+                            Source
                         </Link>
 
                     </Stack>

@@ -17,6 +17,7 @@ export default function DetailResult() {
             .then(res => res.json())
             .then(res => setInfo(res.data))
     }, [])
+
     return (
         <Stack spacing={2}>
             <Typography
@@ -25,7 +26,7 @@ export default function DetailResult() {
                 {info.title}
             </Typography>
 
-            <ResumeDetail image={info.image} summary={info.summary} source={info.creditsText} />
+            <ResumeDetail image={info.image} summary={info.summary} source={info.sourceUrl} />
 
             <IngredientsDetail ingredientsArray={info.extendedIngredients} />
         </Stack>
