@@ -1,9 +1,10 @@
 'use client'
 import { useSearchParams } from 'next/navigation'
-import { Typography } from '@mui/material'
+import { Stack, Typography } from '@mui/material'
 import { useEffect, useState } from 'react'
 
 import { ResumeDetail } from './resume'
+import { IngredientsDetail } from './ingredientsDetail'
 
 export default function DetailResult() {
     const searchParams = useSearchParams()
@@ -16,18 +17,17 @@ export default function DetailResult() {
             .then(res => res.json())
             .then(res => setInfo(res.data))
     }, [])
-    console.log(info)
     return (
-        <div>
+        <Stack spacing={2}>
             <Typography
                 variant='h4'
-                sx={{paddingTop:'1rem', paddingBottom: '1rem', display: 'flex'}}>
+                sx={{ paddingTop: '1rem' }}>
                 {info.title}
             </Typography>
 
-            <ResumeDetail image={info.image} summary={info.summary}/>
+            <ResumeDetail image={info.image} summary={info.summary} source={info.creditsText} />
 
-            
-        </div>
+            <IngredientsDetail ingredientsArray={info.extendedIngredients} />
+        </Stack>
     )
 }
