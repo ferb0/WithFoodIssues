@@ -9,17 +9,17 @@ export const Nutrients = ({ infoNutrients }) => {
             <Table sx={{ maxWidth: 400 }}>
                 <TableHead>
                     <TableRow>
-                        <TableCell align='center'>Name</TableCell>
-                        <TableCell align='center'>Amount</TableCell>
-                        <TableCell align='center'>Percent Of Daily Needs</TableCell>
+                        <TableCell align='center' sx={{padding: '0.5rem'}}>Name</TableCell>
+                        <TableCell align='center' sx={{padding: '0.5rem'}}>Amount</TableCell>
+                        <TableCell align='center' sx={{padding: '0.5rem'}}>Percent Of Daily Needs</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {infoNutrients?.map(elem =>
                         <TableRow key={elem.name} sx={{ border: 0 }}>
-                            <TableCell align='center'>{elem.name}</TableCell>
-                            <TableCell align='center'>{elem.amount} {elem.unit}</TableCell>
-                            <TableCell align='center'>{elem.percentOfDailyNeeds}</TableCell>
+                            <TableCell align='center' sx={{padding: '0.5rem'}}>{elem.name}</TableCell>
+                            <TableCell align='center' sx={{padding: '0.5rem'}}>{elem.amount} {elem.unit}</TableCell>
+                            <TableCell align='center' sx={{padding: '0.5rem'}}>{elem.percentOfDailyNeeds}</TableCell>
                         </TableRow>)}
                 </TableBody>
             </Table>
