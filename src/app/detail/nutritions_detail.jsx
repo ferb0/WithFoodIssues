@@ -3,7 +3,6 @@ import { CaloriesBreackDown } from "./_nutrition_element/calories_breackdown.jsx
 import { Nutrients } from "./_nutrition_element/nutrient.jsx"
 
 export const NutritionsDetails = ({ nutrition }) => {
-    console.log(nutrition)
     return (
         <Card>
             <Typography
