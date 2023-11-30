@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import { ResumeDetail } from './resume'
 import { IngredientsDetail } from './ingredientsDetail'
 import { NutritionsDetails } from './nutritions_detail'
+import { Instructions } from './instructions'
 
 export default function DetailResult() {
     const searchParams = useSearchParams()
@@ -32,6 +33,8 @@ export default function DetailResult() {
             <IngredientsDetail ingredientsArray={info.extendedIngredients} />
 
             <NutritionsDetails nutrition={info.nutrition} />
+
+            <Instructions instructions={info.analyzedInstructions} />
         </Stack>
     )
 }
