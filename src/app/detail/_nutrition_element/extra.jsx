@@ -5,7 +5,7 @@ export const Extra = ({ properties }) => {
         <TableContainer
             size='small'
             component={Paper}
-            sx={{ width: 'auto', padding: '1rem', margin: 'auto', marginTop: '0.5rem' }}>
+            sx={{ width: 'auto', padding: '1rem', margin: 'auto', marginTop: '0.5rem', marginBottom: '1rem' }}>
             <Table sx={{ maxWidth: 400 }}>
                 <TableBody>
                     {properties?.map(element =>
