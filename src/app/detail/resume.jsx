@@ -1,4 +1,4 @@
-import { Typography, CardMedia, Card, Grid, Stack, Link } from '@mui/material'
+import { Typography, CardMedia, Card, Stack, Link } from '@mui/material'
 
 export const ResumeDetail = ({ image, summary, source }) => {
     return (
@@ -10,32 +10,27 @@ export const ResumeDetail = ({ image, summary, source }) => {
                 Resume
             </Typography>
 
-            <Grid container spacing={2}>
-
-                <Grid item xs={4}>
+            <Stack spacing={2} direction={{xs: 'column', sm: 'row', md: 'row', lg: 'row', xl: 'row'}}>
                     <Stack>
                         <CardMedia
                             component='img'
                             src={image}
-                            alt='Image recipe' />
+                            alt='Image recipe'
+                            sx={{minWidth: '20rem'}}/>
                         <Link
                             href={source ? source : ''}
                             target='_blank'
                             underline="none"
                             rel="noreferrer"
-                            sx={{ display: 'flex', margin: 'auto' }}>
+                            sx={{ display: 'flex', marginRight: 'auto', marginLeft: 'auto'}}>
                             Source
                         </Link>
 
                     </Stack>
-                </Grid>
 
-                <Grid item xs={8}>
                     <Typography
                         dangerouslySetInnerHTML={{ __html: summary }} />
-                </Grid>
-
-            </Grid>
+            </Stack>
         </Card>
     )
 }
