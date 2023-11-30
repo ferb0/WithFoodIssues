@@ -10,7 +10,7 @@ export const Instructions = ({ instructions }) => {
             <Typography
                 variant='h5'
                 sx={{ textAlign: 'center' }}>
-                Steps of Recipe
+                Recipe Steps
             </Typography>
 
             {instructions ? instructions[0]?.steps?.map(elem =>
