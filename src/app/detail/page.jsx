@@ -24,7 +24,8 @@ export default function DetailResult() {
         <Stack spacing={2}>
             <Typography
                 variant='h4'
-                sx={{ paddingTop: '1rem' }}>
+                sx={{ paddingTop: '1rem' }}
+                align='center'>
                 {info.title}
             </Typography>
 
