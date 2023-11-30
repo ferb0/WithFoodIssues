@@ -1,7 +1,4 @@
-import Link from 'next/link'
-import { AppBar, Box, Toolbar, Typography } from '@mui/material'
-
-import { linkTheme } from '@/global_objects/theme'
+import { AppBar, Box, Toolbar, Typography, Link } from '@mui/material'
 
 export default function Footer() {
     return (
@@ -14,7 +11,9 @@ export default function Footer() {
                         <Link
                             href='https://www.ferb.ar/'
                             target='_blank'
-                            style={linkTheme}>
+                            underline='none'
+                            rel='noreferrer'
+                            color='secondary'>
                             Created by ferb.
                         </Link>
                     </Typography>
