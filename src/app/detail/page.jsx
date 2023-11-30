@@ -4,7 +4,6 @@ import { Stack, Typography } from '@mui/material'
 import { useEffect, useState } from 'react'
 
 import { ResumeDetail } from './resume'
-import { IngredientsDetail } from './ingredientsDetail'
 import { NutritionsDetails } from './nutritions_detail'
 import { Instructions } from './instructions'
 
@@ -31,9 +30,7 @@ export default function DetailResult() {
 
             <ResumeDetail image={info.image} summary={info.summary} source={info.sourceUrl} />
 
-            <IngredientsDetail ingredientsArray={info.extendedIngredients} />
-
-            <NutritionsDetails nutrition={info.nutrition} />
+            <NutritionsDetails nutrition={info.nutrition} ingredientsArray={info.extendedIngredients}/>
 
             <Instructions instructions={info.analyzedInstructions} />
         </Stack>
