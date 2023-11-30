@@ -15,7 +15,7 @@ export const InstructionsTable = ({ elements, nameTable }) => {
                     </TableHead>
                     <TableBody>
                         {elements?.map(element =>
-                            <TableRow key={element.id} sx={{ border: 0 }}><TableCell>{element.name}</TableCell></TableRow>)}
+                            <TableRow key={element.id+element.name} sx={{ border: 0 }}><TableCell>{element.name}</TableCell></TableRow>)}
                     </TableBody>
                 </Table>
             </TableContainer>
