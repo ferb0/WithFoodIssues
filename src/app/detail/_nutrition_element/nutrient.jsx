@@ -9,9 +9,9 @@ export const Nutrients = ({ infoNutrients }) => {
             <Table sx={{ maxWidth: 400 }}>
                 <TableHead>
                     <TableRow>
-                        <TableCell align='center' sx={{padding: '0.5rem'}}>Name</TableCell>
-                        <TableCell align='center' sx={{padding: '0.5rem'}}>Amount</TableCell>
-                        <TableCell align='center' sx={{padding: '0.5rem'}}>Percent Of Daily Needs</TableCell>
+                        <TableCell align='center' sx={{padding: '0.5rem'}}><strong>Name</strong></TableCell>
+                        <TableCell align='center' sx={{padding: '0.5rem'}}><strong>Amount</strong></TableCell>
+                        <TableCell align='center' sx={{padding: '0.5rem'}}><strong>Percent Of Daily Needs</strong></TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -19,7 +19,7 @@ export const Nutrients = ({ infoNutrients }) => {
                         <TableRow key={elem.name} sx={{ border: 0 }}>
                             <TableCell align='center' sx={{padding: '0.5rem'}}>{elem.name}</TableCell>
                             <TableCell align='center' sx={{padding: '0.5rem'}}>{elem.amount} {elem.unit}</TableCell>
-                            <TableCell align='center' sx={{padding: '0.5rem'}}>{elem.percentOfDailyNeeds}</TableCell>
+                            <TableCell align='center' sx={{padding: '0.5rem'}}>{elem.percentOfDailyNeeds} %</TableCell>
                         </TableRow>)}
                 </TableBody>
             </Table>
