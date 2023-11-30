@@ -9,7 +9,7 @@ export const Extra = ({ properties }) => {
             <Table sx={{ maxWidth: 400 }}>
                 <TableBody>
                     {properties?.map(element =>
-                        <TableRow key={element.name} sx={{ border: 0 }}><TableCell>{element.name}: {element.amount}{element.unit}.</TableCell></TableRow>)}
+                        <TableRow key={element.name} sx={{ border: 0 }}><TableCell>{element.name}: {element.amount.toString().slice(0, 5)}{element.unit}.</TableCell></TableRow>)}
                 </TableBody>
             </Table>
         </TableContainer>
