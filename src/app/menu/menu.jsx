@@ -18,16 +18,13 @@ export const OptionsMenu = () => {
 
     return (
         <Stack>
-            <Button
-                id="menu-button"
+            <Button sx={{margin: '0', paddingLeft: '0rem', minWidth: '0rem'}}
                 aria-controls={open ? 'option-menu' : undefined}
-                aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 onClick={(event) => { setAnchorEl(event.currentTarget) }}
-                endIcon={<MenuIcon sx={{ color: 'black' }} />}>
+                endIcon={<MenuIcon sx={{ color: 'black', margin: '0'}} />}>
             </Button>
             <Menu
-                id="option-menu"
                 anchorEl={anchorEl}
                 open={open}
                 onClose={() => { setAnchorEl(null) }}
