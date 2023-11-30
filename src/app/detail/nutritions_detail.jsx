@@ -13,7 +13,7 @@ export const NutritionsDetails = ({ nutrition }) => {
                 Nutritional Facts
             </Typography>
 
-            <Stack direction='row'>
+            <Stack direction={{xs: 'column', sm: 'column', md: 'row', lg: 'row', xl: 'row'}}>
                 <Nutrients infoNutrients={nutrition?.nutrients}/>
                 <Stack sx={{margin: 'auto', marginTop:'0rem'}}>
                 <CaloriesBreackDown dataCalories={nutrition?.caloricBreakdown} />
