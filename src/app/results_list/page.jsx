@@ -24,12 +24,10 @@ export default function ResultList() {
         cuisineOption,
     } = useContext(searchContext)
 
-    const options = { diet: dietOption, intolerances: intolerancesOption, cuisine: cuisineOption }
-
     useEffect(() => {
         if (search)
-            getRecipes(search, options).then(res => setResults(res))
-    }, [])
+            getRecipes(search, { diet: dietOption, intolerances: intolerancesOption, cuisine: cuisineOption }).then(res => setResults(res))
+    }, [search, dietOption, intolerancesOption, cuisineOption])
 
     return (
         <Container sx={{ padding: '1rem' }}>
