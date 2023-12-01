@@ -6,7 +6,7 @@ export const Landing = () => {
         <Box sx={{paddingTop: '1rem'}}>
             <Typography component='h1' variant='h3' align='center'>With Food Issues</Typography>
             <Typography
-                component='subtitle2'
+                variant='subtitle1'
                 align='center'
                 sx={{ display: 'block', paddingBottom: '1rem' }}>
                 Page where you will find the most varied recipes together with complete information about their ingredients and steps to make the recipe. Enjoy it.
