@@ -13,8 +13,8 @@ export default function NavBar() {
   const route = useRouter()
 
   function handleSubmit(event) {
-      event.preventDefault()
-      route.push(`/results_list?search=${input}`)
+    event.preventDefault()
+    route.push(`/results_list?search=${input}`)
   }
 
   return (
@@ -29,8 +29,6 @@ export default function NavBar() {
           <OutlinedInput
             sx={{ ...styleTextInput, width: 175 }}
             size='small'
-            id='outlined-basic'
-            variant='outlined'
             onChange={(event) => setInput(event.target.value)}
             value={input}
             endAdornment={
