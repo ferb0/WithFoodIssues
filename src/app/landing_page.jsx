@@ -18,3 +18,5 @@ export const Landing = () => {
         </Box>
     )
 }
+
+export default Landing
