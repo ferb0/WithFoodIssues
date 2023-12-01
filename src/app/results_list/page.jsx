@@ -10,6 +10,7 @@ import Results from './results.jsx'
 
 import { getRecipes } from './_controllers/get_data.js'
 import { searchContext } from '../../context/search_context.js'
+import { Landing } from '../landing_page.jsx'
 
 export default function ResultList() {
     const searchParams = useSearchParams()
@@ -32,24 +33,27 @@ export default function ResultList() {
     }, [])
 
     return (
-        <Container sx={{ padding: '1rem' }}>
-            <Grid
-                container
-                spacing={2}>
-                {results.results?.map(el =>
+        <>
+            {results.results.length == 0 ?
+                <Landing /> :
+                <Container sx={{ padding: '1rem' }}>
                     <Grid
-                        item
-                        key={el.id}
-                        xs={12} sm={6} md={4} lg={4}>
-                        <Results key={el.id} element={el} />
-                    </Grid>)}
-            </Grid>
+                        container
+                        spacing={2}>
+                        {results.results?.map(el =>
+                            <Grid
+                                item
+                                key={el.id}
+                                xs={12} sm={6} md={4} lg={4}>
+                                <Results key={el.id} element={el} />
+                            </Grid>)}
+                    </Grid>
 
-            <ResultsPagination
-                number={results.number}
-                totalResults={results.totalResults}
-                setResults={setResults} />
-
-        </Container>
+                    <ResultsPagination
+                        number={results.number}
+                        totalResults={results.totalResults}
+                        setResults={setResults} />
+                </Container>}
+        </>
     )
 }
