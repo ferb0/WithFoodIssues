@@ -26,9 +26,10 @@ export const ResultsPagination = (props) => {
         getRecipes(search, options, value * props.number).then(res => props.setResults(res))
         router.push(`/results_list?search=${search}&page=${value}`)
     }
+
     return (
         <Pagination
-            count={props.totalResults ? Math.ceil(props.totalResults / props.number) : 0}
+            count={props.totalResults ? Math.floor(props.totalResults / props.number) : 0}
             page={page ? parseInt(page) : 1}
             onChange={changePage}
             sx={props.totalResults ?
