@@ -1,4 +1,6 @@
 import { Table, TableBody, TableCell, TableContainer, TableRow, Paper, TableHead } from "@mui/material"
+import Link from "next/link"
+import { linkTheme } from '@/global_objects/theme.js'
 
 export const IngredientsDetail = ({ ingredientsArray }) => {
     return (
@@ -16,7 +18,11 @@ export const IngredientsDetail = ({ ingredientsArray }) => {
                 <TableBody>
                     {ingredientsArray?.map(element =>
                         <TableRow key={element.id} sx={{ border: 0 }}>
-                            <TableCell>{element.name[0].toUpperCase() + element.name.substring(1)}</TableCell>
+                            <TableCell>
+                                <Link href={`/detailIngredient?id=${element.id}`} style={linkTheme}>
+                                {element.name[0].toUpperCase() + element.name.substring(1)}
+                                </Link>
+                                </TableCell>
                             <TableCell> {element.measures.metric.amount + ' ' + element.measures.metric.unitShort}</TableCell>
                         </TableRow>)}
                 </TableBody>
