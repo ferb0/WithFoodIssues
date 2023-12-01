@@ -22,7 +22,7 @@ export default function Results(props) {
             </CardContent>
             <CardActions>
                 <Button size="small">
-                    <Link href={`/detail?id=${id}`} style={linkTheme}>Detalles</Link>
+                    <Link href={`/detailRecipe?id=${id}`} style={linkTheme}>Detalles</Link>
                     </Button>
             </CardActions>
         </Card>
