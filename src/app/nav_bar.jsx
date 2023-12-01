@@ -1,20 +1,20 @@
 import * as React from 'react'
 import Link from 'next/link.js'
 import { useRouter } from 'next/navigation'
-import { OptionsMenu } from './menu/menu.jsx'
+import { AppBar, Box, Toolbar, Typography, OutlinedInput, IconButton } from '@mui/material'
 
-import { AppBar, Box, Toolbar, Typography, TextField } from '@mui/material'
+import SearchIcon from '@mui/icons-material/Search'
+
 import { linkTheme, styleTextInput } from '../global_objects/theme.js'
+import { OptionsMenu } from './menu/menu.jsx'
 
 export default function NavBar() {
   const [input, setInput] = React.useState('')
   const route = useRouter()
 
   function handleSubmit(event) {
-    if (event.key === 'Enter') {
       event.preventDefault()
       route.push(`/results_list?search=${input}`)
-    }
   }
 
   return (
@@ -26,15 +26,20 @@ export default function NavBar() {
             <Link href={'/'} style={linkTheme}>With Food Issues</Link>
           </Typography>
 
-          <TextField
+          <OutlinedInput
             sx={{ ...styleTextInput, width: 175 }}
             size='small'
             id='outlined-basic'
-            label='Search'
             variant='outlined'
-            onChange={() => setInput(event.target.value)}
-            onKeyPress={handleSubmit}
-            value={input} />
+            onChange={(event) => setInput(event.target.value)}
+            value={input}
+            endAdornment={
+              <IconButton
+                type='button'
+                onClick={handleSubmit}
+                sx={{ p: '10px' }}>
+                <SearchIcon />
+              </IconButton>} />
 
           {/* Para que los resultados no se pongan debajo de la barra flotante */}
         </Toolbar>
