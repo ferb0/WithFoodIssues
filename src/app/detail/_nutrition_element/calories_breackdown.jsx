@@ -6,7 +6,10 @@ export const CaloriesBreackDown = ({ dataCalories }) => {
         <TableContainer
             size='small'
             component={Paper}
-            sx={{ width: 'auto', padding: '1rem', margin: 'auto', marginBottom: '0.5rem' }}>
+            sx={{
+                width: 'auto', padding: '1rem', margin: 'auto', marginBottom: '0.5rem',
+                marginTop: { xs: '1rem', sm: '1rem' }
+            }}>
             <Table sx={{ maxWidth: 400 }}>
                 <TableBody>
                     <TableRow sx={{ border: 0 }}><TableCell>Carbs: {dataCalories?.percentCarbs}%.</TableCell></TableRow>
