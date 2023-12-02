@@ -5,7 +5,7 @@ export async function GET(request, { params }) {
     const { id } = params
 
     try {
-        const response = await fetch(URL_API + `/food/ingredients/${id}/information`, requestGet)
+        const response = await fetch(URL_API + `/food/ingredients/${id}/information?amount=100&unit=g`, requestGet)
         const data = await response.json()
 
         return Response.json({ data })
