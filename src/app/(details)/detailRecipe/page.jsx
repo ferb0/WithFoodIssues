@@ -4,7 +4,7 @@ import { Stack, Typography } from '@mui/material'
 import { useEffect, useState } from 'react'
 
 import { ResumeDetail } from './resume'
-import { NutritionsDetails } from './nutritions_detail'
+import { NutritionsDetails } from '../_common/nutritions_detail'
 import { Instructions } from './instructions'
 
 export default function DetailResult() {
