@@ -11,7 +11,7 @@ export const NutritionsDetails = ({ nutrition, ingredientsArray }) => {
                 variant='h5'
                 sx={{ textAlign: 'center' }}
                 pb='1rem'>
-                {ingredientsArray != null ? 'Recipe Information' : 'Ingredient Information'}
+                {ingredientsArray != null ? 'Recipe Information' : 'Nutritional Information per 100g'}
             </Typography>
 
             <Stack direction={{ xs: 'column', sm: 'column', md: 'row', lg: 'row', xl: 'row' }}>
