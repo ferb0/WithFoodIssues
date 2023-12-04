@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation'
 import { AppBar, Box, Toolbar, Typography, TextField, Autocomplete, Link as LinkMUI, Stack } from '@mui/material'
 
 import { linkTheme, styleTextInput } from '../global_objects/theme.js'
-import { OptionsMenu } from './menu/menu.jsx'
+import { OptionsMenu } from './_menu/menu.jsx'
 
 export default function NavBar() {
   const [inputValue, setInputValue] = React.useState('')
