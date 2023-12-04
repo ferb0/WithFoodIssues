@@ -30,7 +30,7 @@ export default function NavBar() {
           <OptionsMenu />
 
           <Stack
-            sx={{ flexGrow: 1, paddingLeft: '1.5rem' }}>
+            sx={{ flexGrow: 1}}>
             <Typography variant='h6'>
               <Link href={'/'} style={linkTheme}>With Food Issues</Link>
             </Typography>
