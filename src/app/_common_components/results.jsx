@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Card, Typography, CardMedia, CardActions, Button, CardContent } from '@mui/material'
 
-import { linkTheme } from '@/global_objects/theme'
+import { linkTheme } from '@/global_objects/theme.js'
 
 export default function Results(props) {
     const { id, title, image, summary, imageType } = props.element

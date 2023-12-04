@@ -2,7 +2,7 @@
 import { useSearchParams } from 'next/navigation'
 import { Stack, Typography, Card, CardMedia, CardContent, Box } from '@mui/material'
 import { useEffect, useState } from 'react'
-import NutritionsDetails from '../_common/nutritions_detail'
+import NutritionsDetails from '../_common/nutritions_detail.jsx'
 
 let URL_IMAGE = 'https://spoonacular.com/cdn/ingredients_250x250/'
 
