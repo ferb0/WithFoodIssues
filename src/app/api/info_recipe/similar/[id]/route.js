@@ -1,5 +1,5 @@
 const URL_API = process.env.API_BASE_URL
-import { requestGet } from '../../requestAPI.js'
+import { requestGet } from '../../../requestAPI.js'
 
 export async function GET(request, { params }) {
     const { id } = params
