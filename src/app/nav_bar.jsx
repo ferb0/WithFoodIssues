@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Link from 'next/link.js'
 import { useRouter } from 'next/navigation'
-import { AppBar, Box, Toolbar, Typography, TextField, Autocomplete } from '@mui/material'
+import { AppBar, Box, Toolbar, Typography, TextField, Autocomplete, Link as LinkMUI, Stack } from '@mui/material'
 
 import { linkTheme, styleTextInput } from '../global_objects/theme.js'
 import { OptionsMenu } from './menu/menu.jsx'
@@ -28,9 +28,24 @@ export default function NavBar() {
       <AppBar position='fixed'>
         <Toolbar>
           <OptionsMenu />
-          <Typography variant='h6' componeznt='div' sx={{ flexGrow: 1 }}>
-            <Link href={'/'} style={linkTheme}>With Food Issues</Link>
-          </Typography>
+
+          <Stack
+            sx={{ flexGrow: 1, paddingLeft: '1.5rem' }}>
+            <Typography variant='h6'>
+              <Link href={'/'} style={linkTheme}>With Food Issues</Link>
+            </Typography>
+            <Typography
+              variant='body2'>
+              <LinkMUI
+                href='https://www.ferb.ar/'
+                target='_blank'
+                underline='none'
+                rel='noreferrer'
+                color='secondary'>
+                by ferb
+              </LinkMUI>
+            </Typography>
+          </Stack>
 
           <Autocomplete
             sx={{ ...styleTextInput, width: 175 }}
