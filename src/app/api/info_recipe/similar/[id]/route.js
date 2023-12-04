@@ -5,7 +5,7 @@ export async function GET(request, { params }) {
     const { id } = params
 
     try {
-        const response = await fetch(URL_API + `/recipes/${id}/similar`, requestGet)
+        const response = await fetch(URL_API + `/recipes/${id}/similar?number=4`, requestGet)
         const data = await response.json()
 
         return Response.json({ data })
