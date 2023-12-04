@@ -1,9 +1,9 @@
 import { Typography, Box } from '@mui/material'
 import image from '@/global_objects/food_landing.jpg'
 
-export const Landing = () => {
+export default function Landing() {
     return (
-        <Box sx={{paddingTop: '1rem'}}>
+        <Box sx={{ paddingTop: '1rem' }}>
             <Typography component='h1' variant='h3' align='center'>With Food Issues</Typography>
             <Typography
                 variant='subtitle1'
@@ -18,5 +18,3 @@ export const Landing = () => {
         </Box>
     )
 }
-
-export default Landing

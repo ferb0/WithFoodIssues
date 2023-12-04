@@ -1,10 +1,10 @@
 import { Card, Typography, Stack } from '@mui/material'
-import { CaloriesBreackDown } from './_nutrition_element/calories_breackdown.jsx'
-import { Nutrients } from './_nutrition_element/nutrient.jsx'
-import { Extra } from './_nutrition_element/extra.jsx'
-import { IngredientsDetail } from './_nutrition_element/ingredientsDetail.jsx'
+import CaloriesBreackDown from './_nutrition_element/calories_breackdown.jsx'
+import Nutrients from './_nutrition_element/nutrient.jsx'
+import Extra from './_nutrition_element/extra.jsx'
+import IngredientsDetail from './_nutrition_element/ingredientsDetail.jsx'
 
-export const NutritionsDetails = ({ nutrition, ingredientsArray }) => {
+export default function NutritionsDetails({ nutrition, ingredientsArray }) {
     return (
         <Card>
             <Typography

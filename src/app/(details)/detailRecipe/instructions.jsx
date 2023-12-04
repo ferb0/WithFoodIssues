@@ -2,9 +2,9 @@ import * as React from 'react'
 import { Typography, Card, Stack, Accordion, AccordionSummary, AccordionDetails, } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 
-import { InstructionsTable } from './_instructions_tables/instructions_table'
+import InstructionsTable from './_instructions_tables/instructions_table'
 
-export const Instructions = ({ instructions }) => {
+export default function Instructions({ instructions }) {
     return (
         <Card>
             <Typography

@@ -1,6 +1,6 @@
 import { Table, TableBody, TableCell, TableContainer, TableRow, Paper } from "@mui/material"
 
-export const CaloriesBreackDown = ({ dataCalories }) => {
+export default function CaloriesBreackDown({ dataCalories }) {
     const PADDING_SIDE = '3rem'
     return (
         <TableContainer

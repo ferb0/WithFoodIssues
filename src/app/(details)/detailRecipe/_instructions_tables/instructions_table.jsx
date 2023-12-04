@@ -1,6 +1,6 @@
 import { Card, TableContainer, Table, TableBody, TableRow, Paper, TableCell, TableHead } from '@mui/material'
 
-export const InstructionsTable = ({ elements, nameTable }) => {
+export default function InstructionsTable({ elements, nameTable }) {
     return (
         <Card sx={{ margin: 'auto' }}>
             <TableContainer
@@ -15,7 +15,7 @@ export const InstructionsTable = ({ elements, nameTable }) => {
                     </TableHead>
                     <TableBody>
                         {elements?.map(element =>
-                            <TableRow key={element.id+element.name} sx={{ border: 0 }}><TableCell>{element.name}</TableCell></TableRow>)}
+                            <TableRow key={element.id + element.name} sx={{ border: 0 }}><TableCell>{element.name}</TableCell></TableRow>)}
                     </TableBody>
                 </Table>
             </TableContainer>

@@ -1,6 +1,6 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@mui/material"
 
-export const Nutrients = ({ infoNutrients }) => {
+export default function Nutrients({ infoNutrients }) {
     return (
         <TableContainer
             size='small'
@@ -9,17 +9,17 @@ export const Nutrients = ({ infoNutrients }) => {
             <Table sx={{ maxWidth: 400 }}>
                 <TableHead>
                     <TableRow>
-                        <TableCell align='center' sx={{padding: '0.5rem'}}><strong>Name</strong></TableCell>
-                        <TableCell align='center' sx={{padding: '0.5rem'}}><strong>Amount</strong></TableCell>
-                        <TableCell align='center' sx={{padding: '0.5rem'}}><strong>Percent Of Daily Needs</strong></TableCell>
+                        <TableCell align='center' sx={{ padding: '0.5rem' }}><strong>Name</strong></TableCell>
+                        <TableCell align='center' sx={{ padding: '0.5rem' }}><strong>Amount</strong></TableCell>
+                        <TableCell align='center' sx={{ padding: '0.5rem' }}><strong>Percent Of Daily Needs</strong></TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {infoNutrients?.map(elem =>
                         <TableRow key={elem.name} sx={{ border: 0 }}>
-                            <TableCell align='center' sx={{padding: '0.5rem'}}>{elem.name}</TableCell>
-                            <TableCell align='center' sx={{padding: '0.5rem'}}>{elem.amount} {elem.unit}</TableCell>
-                            <TableCell align='center' sx={{padding: '0.5rem'}}>{elem.percentOfDailyNeeds} %</TableCell>
+                            <TableCell align='center' sx={{ padding: '0.5rem' }}>{elem.name}</TableCell>
+                            <TableCell align='center' sx={{ padding: '0.5rem' }}>{elem.amount} {elem.unit}</TableCell>
+                            <TableCell align='center' sx={{ padding: '0.5rem' }}>{elem.percentOfDailyNeeds} %</TableCell>
                         </TableRow>)}
                 </TableBody>
             </Table>

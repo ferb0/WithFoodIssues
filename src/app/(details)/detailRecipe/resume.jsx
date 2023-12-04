@@ -1,6 +1,6 @@
 import { Typography, CardMedia, Card, Stack, Link } from '@mui/material'
 
-export const ResumeDetail = ({ image, summary, source }) => {
+export default function ResumeDetail({ image, summary, source }) {
     return (
         <Card
             sx={{ padding: '0.5rem' }}>
@@ -10,26 +10,26 @@ export const ResumeDetail = ({ image, summary, source }) => {
                 Resume
             </Typography>
 
-            <Stack spacing={2} direction={{xs: 'column', sm: 'row', md: 'row', lg: 'row', xl: 'row'}}>
-                    <Stack>
-                        <CardMedia
-                            component='img'
-                            src={image}
-                            alt='Image recipe'
-                            sx={{minWidth: '20rem'}}/>
-                        <Link
-                            href={source ? source : ''}
-                            target='_blank'
-                            underline="none"
-                            rel="noreferrer"
-                            sx={{ display: 'flex', marginRight: 'auto', marginLeft: 'auto'}}>
-                            Source
-                        </Link>
+            <Stack spacing={2} direction={{ xs: 'column', sm: 'row', md: 'row', lg: 'row', xl: 'row' }}>
+                <Stack>
+                    <CardMedia
+                        component='img'
+                        src={image}
+                        alt='Image recipe'
+                        sx={{ minWidth: '20rem' }} />
+                    <Link
+                        href={source ? source : ''}
+                        target='_blank'
+                        underline="none"
+                        rel="noreferrer"
+                        sx={{ display: 'flex', marginRight: 'auto', marginLeft: 'auto' }}>
+                        Source
+                    </Link>
 
-                    </Stack>
+                </Stack>
 
-                    <Typography
-                        dangerouslySetInnerHTML={{ __html: summary }} />
+                <Typography
+                    dangerouslySetInnerHTML={{ __html: summary }} />
             </Stack>
         </Card>
     )

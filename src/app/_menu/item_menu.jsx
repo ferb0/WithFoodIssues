@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Autocomplete, MenuItem, TextField } from '@mui/material'
 
-export const OptionItem = (props) => {
+export default function OptionItem(props) {
     return (
         <MenuItem >
             <Autocomplete

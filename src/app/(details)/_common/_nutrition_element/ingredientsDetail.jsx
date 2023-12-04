@@ -2,7 +2,7 @@ import { Table, TableBody, TableCell, TableContainer, TableRow, Paper, TableHead
 import Link from "next/link"
 import { linkTheme } from '@/global_objects/theme.js'
 
-export const IngredientsDetail = ({ ingredientsArray }) => {
+export default function IngredientsDetail({ ingredientsArray }) {
     return (
         <TableContainer
             size='small'
@@ -20,9 +20,9 @@ export const IngredientsDetail = ({ ingredientsArray }) => {
                         <TableRow key={element.id} sx={{ border: 0 }}>
                             <TableCell>
                                 <Link href={`/detailIngredient?id=${element.id}`} style={linkTheme}>
-                                {element.name[0].toUpperCase() + element.name.substring(1)}
+                                    {element.name[0].toUpperCase() + element.name.substring(1)}
                                 </Link>
-                                </TableCell>
+                            </TableCell>
                             <TableCell> {element.measures.metric.amount + ' ' + element.measures.metric.unitShort}</TableCell>
                         </TableRow>)}
                 </TableBody>

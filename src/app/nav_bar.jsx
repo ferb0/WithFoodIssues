@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation'
 import { AppBar, Box, Toolbar, Typography, TextField, Autocomplete, Link as LinkMUI, Stack } from '@mui/material'
 
 import { linkTheme, styleTextInput } from '../global_objects/theme.js'
-import { OptionsMenu } from './_menu/menu.jsx'
+import OptionsMenu from './_menu/menu.jsx'
 
 export default function NavBar() {
   const [inputValue, setInputValue] = React.useState('')
@@ -30,7 +30,7 @@ export default function NavBar() {
           <OptionsMenu />
 
           <Stack
-            sx={{ flexGrow: 1}}>
+            sx={{ flexGrow: 1 }}>
             <Typography variant='h6'>
               <Link href={'/'} style={linkTheme}>With Food Issues</Link>
             </Typography>

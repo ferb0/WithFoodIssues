@@ -6,7 +6,7 @@ import { Pagination } from '@mui/material'
 import { getRecipes } from './_controllers/get_data.js'
 import { searchContext } from '../../context/search_context.js'
 
-export const ResultsPagination = (props) => {
+export default function ResultsPagination(props) {
     const router = useRouter()
     const searchParams = useSearchParams()
 

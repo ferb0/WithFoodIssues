@@ -1,6 +1,6 @@
 import { Table, TableBody, TableCell, TableContainer, TableRow, Paper } from "@mui/material"
 
-export const Extra = ({ properties }) => {
+export default function Extra({ properties }) {
     return (
         <TableContainer
             size='small'

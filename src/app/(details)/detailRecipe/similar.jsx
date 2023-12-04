@@ -1,8 +1,8 @@
 import Results from "@/app/_common_components/results"
-import { Card, Grid, Stack, Typography } from "@mui/material"
+import { Card, Grid, Typography } from "@mui/material"
 import React from "react"
 
-export const SimilarRecipes = ({ idRecipe }) => {
+export default function SimilarRecipes({ idRecipe }) {
     const [similars, setSimilars] = React.useState([])
 
     React.useEffect(() => {
@@ -21,7 +21,7 @@ export const SimilarRecipes = ({ idRecipe }) => {
             <Grid container columns={{ xs: 2, sm: 8, md: 12 }}>
                 {similars?.map(elem =>
                     <Grid item key={elem.id} xs={2} sm={4} md={3}
-                    sx={{padding: '1rem', margin: 'auto', flexBasis: 'auto'}}>
+                        sx={{ padding: '1rem', margin: 'auto', flexBasis: 'auto' }}>
                         <Results key={elem.id} element={elem} />
                     </Grid>)}
             </Grid>
