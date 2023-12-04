@@ -4,15 +4,21 @@ import { Card, Typography, CardMedia, CardActions, Button, CardContent } from '@
 import { linkTheme } from '@/global_objects/theme'
 
 export default function Results(props) {
-    let { id, title, image, summary } = props.element
+    const { id, title, image, summary, imageType } = props.element
+    const SIZE = '480x360'
 
     return (
         <Card sx={{ maxWidth: 345 }}>
             {image ? <CardMedia
                 sx={{ height: 140 }}
                 image={image}
+                title={title}/>
+                 : 
+                 <CardMedia
+                sx={{ height: 140 }}
+                image={`https://spoonacular.com/recipeImages/${id}-${SIZE}.${imageType}`}
                 title={title}
-            /> : null}
+            />}
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                     {title}
