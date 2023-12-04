@@ -7,7 +7,7 @@ import { useSearchParams } from 'next/navigation'
 import { Container, Grid } from '@mui/material'
 
 import { ResultsPagination } from './results_paginations.jsx'
-import Results from './results.jsx'
+import Results from '../_common_components/results.jsx'
 
 import { getRecipes } from './_controllers/get_data.js'
 import { searchContext } from '../../context/search_context.js'
