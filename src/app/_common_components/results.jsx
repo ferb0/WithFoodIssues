@@ -8,17 +8,17 @@ export default function Results(props) {
 
     return (
         <Card sx={{ maxWidth: 345 }}>
-            <CardMedia
+            {image ? <CardMedia
                 sx={{ height: 140 }}
                 image={image}
                 title={title}
-            />
+            /> : null}
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                     {title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary"
-                    dangerouslySetInnerHTML={{ __html: summary }} />
+                {summary ? <Typography variant="body2" color="text.secondary"
+                    dangerouslySetInnerHTML={{ __html: summary }} /> : null}
             </CardContent>
             <CardActions>
                 <Button size="small">
