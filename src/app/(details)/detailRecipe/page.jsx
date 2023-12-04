@@ -32,7 +32,7 @@ export default function DetailResult() {
             <ResumeDetail image={info.image} summary={info.summary} source={info.sourceUrl} />
             <NutritionsDetails nutrition={info.nutrition} ingredientsArray={info.extendedIngredients}/>
             <Instructions instructions={info.analyzedInstructions} />
-            <SimilarRecipes />
+            <SimilarRecipes idRecipe={id}/>
 
         </Stack>
     )
