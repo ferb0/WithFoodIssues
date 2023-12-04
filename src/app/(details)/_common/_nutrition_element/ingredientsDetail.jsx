@@ -1,5 +1,5 @@
-import { Table, TableBody, TableCell, TableContainer, TableRow, Paper, TableHead } from "@mui/material"
-import Link from "next/link"
+import { Table, TableBody, TableCell, TableContainer, TableRow, Paper, TableHead } from '@mui/material'
+import Link from 'next/link'
 import { linkTheme } from '@/global_objects/theme.js'
 
 export default function IngredientsDetail({ ingredientsArray }) {

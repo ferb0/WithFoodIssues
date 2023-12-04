@@ -1,4 +1,4 @@
-import { dietOptions, intolerancesOptions, cuisineOptions } from "@/global_objects/recipes_options"
+import { dietOptions, intolerancesOptions, cuisineOptions } from '@/global_objects/recipes_options'
 
 export const optionsControl = (options) => {
     if ((dietOptions.includes(options.diet) || options.diet === '') &&

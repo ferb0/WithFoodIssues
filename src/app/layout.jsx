@@ -5,7 +5,7 @@ import theme from '../global_objects/theme.js'
 import { useState } from 'react'
 import { searchContext } from '../context/search_context.js'
 
-import NavBar from "./nav_bar.jsx"
+import NavBar from './nav_bar.jsx'
 
 // export const metadata = {
 //   title: 'With Food Issues',
@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
   let [cuisineOption, setCuisineOption] = useState('')
 
   return (
-    <html lang="en">
+    <html lang='en'>
       <searchContext.Provider
         value={{
           dietOption, setDietOption,

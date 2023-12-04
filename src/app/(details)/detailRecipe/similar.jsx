@@ -1,6 +1,7 @@
-import Results from "@/app/_common_components/results"
-import { Card, Grid, Typography } from "@mui/material"
-import React from "react"
+import React from 'react'
+import { Card, Grid, Typography } from '@mui/material'
+
+import Results from '@/app/_common_components/results.jsx'
 
 export default function SimilarRecipes({ idRecipe }) {
     const [similars, setSimilars] = React.useState([])

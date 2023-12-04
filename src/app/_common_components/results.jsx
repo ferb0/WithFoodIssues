@@ -14,14 +14,14 @@ export default function Results(props) {
                 image={image ? image : `https://spoonacular.com/recipeImages/${id}-${SIZE}.${imageType}`}
                 title={title} />
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography gutterBottom variant='h5' component='div'>
                     {title}
                 </Typography>
-                {summary ? <Typography variant="body2" color="text.secondary"
+                {summary ? <Typography variant='body2' color='text.secondary'
                     dangerouslySetInnerHTML={{ __html: summary }} /> : null}
             </CardContent>
             <CardActions>
-                <Button size="small">
+                <Button size='small'>
                     <Link href={`/detailRecipe?id=${id}`} style={linkTheme}>Detalles</Link>
                 </Button>
             </CardActions>

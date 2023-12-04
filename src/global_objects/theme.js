@@ -35,11 +35,11 @@ const theme = createTheme({
 })
 
 export const styleTextInput = {
-    "& label.Mui-focused": {
+    '& label.Mui-focused': {
         color: black
     },
-    "& .MuiOutlinedInput-root": {
-        "&.Mui-focused fieldset": {
+    '& .MuiOutlinedInput-root': {
+        '&.Mui-focused fieldset': {
             borderColor: black
         }
     }

@@ -20,8 +20,8 @@ export default function ResumeDetail({ image, summary, source }) {
                     <Link
                         href={source ? source : ''}
                         target='_blank'
-                        underline="none"
-                        rel="noreferrer"
+                        underline='none'
+                        rel='noreferrer'
                         sx={{ display: 'flex', marginRight: 'auto', marginLeft: 'auto' }}>
                         Source
                     </Link>

@@ -34,7 +34,7 @@ export default function ResultsPagination(props) {
             onChange={changePage}
             sx={props.totalResults ?
                 {
-                    paddingTop: "1rem",
+                    paddingTop: '1rem',
                     display: 'flex',
                     justifyContent: 'center'
                 } :

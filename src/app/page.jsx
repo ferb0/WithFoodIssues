@@ -1,5 +1,5 @@
-import Landing from "./landing_page.jsx"
-import ResultList from "./results_list/page.jsx"
+import Landing from './landing_page.jsx'
+import ResultList from './results_list/page.jsx'
 
 export default function Home() {
   return (
