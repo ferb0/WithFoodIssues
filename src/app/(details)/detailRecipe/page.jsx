@@ -15,10 +15,11 @@ export default function DetailResult() {
     let [info, setInfo] = useState({})
 
     useEffect(() => {
+        setInfo({})
         fetch(`/api/info_recipe/${id}`)
             .then(res => res.json())
             .then(res => setInfo(res.data))
-    }, [])
+    }, [id])
 
     return (
         <Stack spacing={2}>
