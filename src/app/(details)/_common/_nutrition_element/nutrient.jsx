@@ -5,7 +5,9 @@ export default function Nutrients({ infoNutrients }) {
         <TableContainer
             size='small'
             component={Paper}
-            sx={{ width: 'auto', padding: '1rem', margin: 'auto', marginBottom: '1rem' }}>
+            sx={{
+                width: 'auto', padding: '1rem', margin: 'auto', 
+                marginBottom: {sm: '1rem',md:'auto', sm: 'auto', lg: 'auto', xl: 'auto'} }}>
             <Table sx={{ maxWidth: 400 }}>
                 <TableHead>
                     <TableRow>
