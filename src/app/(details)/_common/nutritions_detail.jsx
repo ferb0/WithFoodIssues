@@ -3,7 +3,7 @@ import CaloriesBreackDown from './_nutrition_element/calories_breackdown.jsx'
 import Nutrients from './_nutrition_element/nutrient.jsx'
 import Extra from './_nutrition_element/extra.jsx'
 import IngredientsDetail from './_nutrition_element/ingredientsDetail.jsx'
-import TasteChart from './_nutrition_element/taste_graphic_chart.jsx'
+import TasteRadarChart from './_nutrition_element/taste_radar_chart.jsx'
 
 export default function NutritionsDetails({ idRecipe, nutrition, ingredientsArray }) {
     return (
@@ -24,7 +24,7 @@ export default function NutritionsDetails({ idRecipe, nutrition, ingredientsArra
                         <CaloriesBreackDown dataCalories={nutrition?.caloricBreakdown} />
                         <Extra properties={nutrition?.properties} />
                     </Stack>
-                    {ingredientsArray != null ? <TasteChart idRecipe={idRecipe} /> : null}
+                    {ingredientsArray != null ? <TasteRadarChart idRecipe={idRecipe} /> : null}
                 </Stack>
                 <Nutrients infoNutrients={nutrition?.nutrients} />
             </Stack>
