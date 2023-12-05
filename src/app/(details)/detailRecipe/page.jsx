@@ -31,7 +31,7 @@ export default function DetailResult() {
             </Typography>
 
             <ResumeDetail image={info.image} summary={info.summary} source={info.sourceUrl} />
-            <NutritionsDetails nutrition={info.nutrition} ingredientsArray={info.extendedIngredients} />
+            <NutritionsDetails idRecipe={id} nutrition={info.nutrition} ingredientsArray={info.extendedIngredients} />
             <Instructions instructions={info.analyzedInstructions} />
             <SimilarRecipes idRecipe={id} />
 
