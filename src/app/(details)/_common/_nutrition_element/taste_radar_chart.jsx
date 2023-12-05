@@ -16,7 +16,7 @@ const captions = {
     sweetness: 'Sweetness'
 }
 
-export default function TasteChart({ idRecipe }) {
+export default function TasteRadarChart({ idRecipe }) {
     const [dataTaste, setDataTaste] = React.useState([])
 
     React.useEffect(() => {
