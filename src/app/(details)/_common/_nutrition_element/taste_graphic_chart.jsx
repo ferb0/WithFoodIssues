@@ -1,9 +1,9 @@
-import React from "react"
+import React from 'react'
 
 import RadarChart from 'react-svg-radar-chart';
 import 'react-svg-radar-chart/build/css/index.css'
-import { formateChart } from "./formated_data_chart";
-import { Card } from "@mui/material";
+import { formateChart } from './_controllers/formated_data_chart.js';
+import { Card } from '@mui/material';
 
 const captions = {
     // columns
