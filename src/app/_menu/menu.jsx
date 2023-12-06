@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Stack, Menu, Button } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import OptionItem from './item_menu.jsx'
+import SelectSearch from './item_select.jsx'
 
 import { searchContext } from '../../context/search_context.js'
 import { dietOptions, intolerancesOptions, cuisineOptions } from '@/global_objects/recipes_options.js'
@@ -46,6 +47,7 @@ export default function OptionsMenu() {
                     setValue={setIntolerancesOption}
                     label={'Intolerance Options'}
                     options={intolerancesOptions} />
+                <SelectSearch />
             </Menu>
         </Stack>
     )
