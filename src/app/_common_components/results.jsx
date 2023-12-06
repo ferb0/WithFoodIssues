@@ -11,7 +11,7 @@ export default function Results(props) {
         <Card sx={{ maxWidth: 345 }}>
             <CardMedia
                 sx={{ height: 140 }}
-                image={image ? image : `https://spoonacular.com/recipeImages/${id}-${SIZE}.${imageType}`}
+                image={image || `https://spoonacular.com/recipeImages/${id}-${SIZE}.${imageType}`}
                 title={title} />
             <CardContent>
                 <Typography gutterBottom variant='h5' component='div'>
