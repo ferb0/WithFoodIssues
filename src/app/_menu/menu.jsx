@@ -14,7 +14,8 @@ export default function OptionsMenu() {
     const {
         dietOption, setDietOption,
         intolerancesOption, setIntolerancesOption,
-        cuisineOption, setCuisineOption
+        cuisineOption, setCuisineOption,
+        switchSearch
     } = React.useContext(searchContext)
 
     return (
@@ -33,16 +34,19 @@ export default function OptionsMenu() {
                     'aria-labelledby': 'menu-button'
                 }}>
                 <OptionItem
+                    disabled={!switchSearch}
                     value={dietOption}
                     setValue={setDietOption}
                     label={'Diet Options'}
                     options={dietOptions} />
                 <OptionItem
+                    disabled={!switchSearch}
                     value={cuisineOption}
                     setValue={setCuisineOption}
                     label={'Cousine Options'}
                     options={cuisineOptions} />
                 <OptionItem
+                    disabled={!switchSearch}
                     value={intolerancesOption}
                     setValue={setIntolerancesOption}
                     label={'Intolerance Options'}

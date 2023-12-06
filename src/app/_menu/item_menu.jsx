@@ -5,6 +5,7 @@ export default function OptionItem(props) {
     return (
         <MenuItem >
             <Autocomplete
+                disabled={props.disabled}
                 autoSelect
                 freeSolo
                 onInputChange={(event, newValue) => { props.setValue(newValue) }}
