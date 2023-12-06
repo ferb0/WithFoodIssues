@@ -20,9 +20,10 @@ export default function SelectSearch() {
                 inputProps={{ 'aria-label': 'controlled' }}
                 sx={{ marginLeft: '1rem' }} />
             <Typography
+                color={switchSearch ? 'primary' : 'secondary'}
                 align='center'
-                sx={{ paddingLeft: '1rem' }}>
-                {switchSearch ? 'Recipe' : 'Ingredient'}
+                sx={{ paddingLeft: '0.3rem' }}>
+                {switchSearch ? 'Search Recipe' : 'Search Ingredient'}
             </Typography>
         </li>
     )
