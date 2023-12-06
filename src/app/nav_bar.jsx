@@ -6,9 +6,16 @@ import { AppBar, Box, Toolbar, Typography, TextField, Autocomplete, Link as Link
 import { linkTheme, styleTextInput } from '../global_objects/theme.js'
 import OptionsMenu from './_menu/menu.jsx'
 
+import { searchContext } from '@/context/search_context.js'
+
 export default function NavBar() {
   const [inputValue, setInputValue] = React.useState('')
   const [options, setOptions] = React.useState([''])
+
+  const {
+    switchSearch, setSwitchSearch
+  } = React.useContext(searchContext)
+
   const route = useRouter()
 
   React.useEffect(() => {
@@ -19,8 +26,12 @@ export default function NavBar() {
   }, [inputValue])
 
   function handleSubmit(valueSelected) {
-    if (valueSelected)
-      route.push(`/results_list?search=${valueSelected}`)
+    if (switchSearch) {
+      if (valueSelected)
+        route.push(`/results_list?search=${valueSelected}`)
+    }
+    else
+      route.push(`/detailIngredient?id=${valueSelected}`)
   }
 
   return (
