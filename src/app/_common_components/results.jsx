@@ -7,15 +7,14 @@ import { imageBlurResult } from '@/global_objects/image_blur_result.js'
 
 export default function Results(props) {
     const { id, title, summary, imageType } = props.element
-    const SIZE = '480x360'
+    const SIZE = '312x231'
 
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: 270, marginLeft: 'auto', marginRight: 'auto', marginBottom: '1rem' }}>
             <Image
-                sx={{ height: 140 }}
                 src={`https://spoonacular.com/recipeImages/${id}-${SIZE}.${imageType}`}
-                width={'350'}
-                height={'240'}
+                width={'312'}
+                height={'231'}
                 alt={title}
                 placeholder='blur'
                 blurDataURL={imageBlurResult} />
