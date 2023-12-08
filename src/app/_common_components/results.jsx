@@ -6,7 +6,7 @@ import { linkTheme } from '@/global_objects/theme.js'
 import { imageBlurResult } from '@/global_objects/image_blur_result.js'
 
 export default function Results(props) {
-    const { id, title, image, summary, imageType } = props.element
+    const { id, title, summary, imageType } = props.element
     const SIZE = '480x360'
 
     return (
@@ -14,8 +14,8 @@ export default function Results(props) {
             <Image
                 sx={{ height: 140 }}
                 src={`https://spoonacular.com/recipeImages/${id}-${SIZE}.${imageType}`}
-                width={'480'}
-                height={'360'}
+                width={'350'}
+                height={'240'}
                 alt={title}
                 placeholder='blur'
                 blurDataURL={imageBlurResult} />
