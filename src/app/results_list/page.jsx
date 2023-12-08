@@ -35,7 +35,8 @@ export default function ResultList() {
     return (
         <Container sx={{ padding: '1rem' }}>
             <Grid
-                container>
+                container
+                spacing={2}>
                 {results.results?.map(el =>
                     <Grid
                         item
