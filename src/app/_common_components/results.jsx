@@ -1,7 +1,9 @@
 import Link from 'next/link'
-import { Card, Typography, CardMedia, CardActions, Button, CardContent } from '@mui/material'
+import { Card, Typography, CardActions, Button, CardContent } from '@mui/material'
+import Image from 'next/image'
 
 import { linkTheme } from '@/global_objects/theme.js'
+import { imageBlurResult } from '@/global_objects/image_blur_result.js'
 
 export default function Results(props) {
     const { id, title, image, summary, imageType } = props.element
@@ -9,10 +11,14 @@ export default function Results(props) {
 
     return (
         <Card sx={{ maxWidth: 345 }}>
-            <CardMedia
+            <Image
                 sx={{ height: 140 }}
-                image={image || `https://spoonacular.com/recipeImages/${id}-${SIZE}.${imageType}`}
-                title={title} />
+                src={`https://spoonacular.com/recipeImages/${id}-${SIZE}.${imageType}`}
+                width={'480'}
+                height={'360'}
+                alt={title}
+                placeholder='blur'
+                blurDataURL={imageBlurResult} />
             <CardContent>
                 <Typography gutterBottom variant='h5' component='div'>
                     {title}
