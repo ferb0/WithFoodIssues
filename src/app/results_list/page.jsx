@@ -33,15 +33,13 @@ export default function ResultList() {
     }, [search, dietOption, intolerancesOption, cuisineOption])
 
     return (
-        <Container sx={{ padding: '1rem' }}>
-            <Grid
-                container
-                spacing={2}>
+        <Container>
+            <Grid container >
                 {results.results?.map(el =>
                     <Grid
                         item
                         key={el.id}
-                        xs={12} sm={6} md={4} lg={4}>
+                        xs={12} sm={6} md={4} lg={3}>
                         <Results key={el.id} element={el} />
                     </Grid>)}
             </Grid>
