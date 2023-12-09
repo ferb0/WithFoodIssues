@@ -2,6 +2,8 @@
 import { useSearchParams } from 'next/navigation'
 import { Stack, Typography, Card, CardMedia, CardContent, Box } from '@mui/material'
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
+
 import NutritionsDetails from '../_common/nutritions_detail.jsx'
 
 let URL_IMAGE = 'https://spoonacular.com/cdn/ingredients_250x250/'
@@ -22,10 +24,13 @@ export default function DetailResult() {
         <Stack
             direction={{ xs: 'column', sm: 'column', md: 'row', lg: 'row', xl: 'row' }}>
             <Card sx={{ maxWidth: 345, margin: 'auto', marginTop: '0rem' }}>
-                <CardMedia
-                    sx={{ height: 140 }}
-                    image={URL_IMAGE + info.image}
-                    title={info.name}
+                <Image
+                    src={URL_IMAGE + info.image}
+                    width={500}
+                    height={500}
+                    alt={info.name}
+                    placeholder='blur'
+                    blurDataURL={imageBlur}
                 />
                 <CardContent>
                     <Typography
