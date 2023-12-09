@@ -1,4 +1,4 @@
-import { Typography, CardMedia, Card, Stack, Link } from '@mui/material'
+import { Typography, CardMedia, Card, Stack, Link, Skeleton } from '@mui/material'
 
 export default function ResumeDetail({ image, summary, source }) {
     return (
@@ -28,8 +28,10 @@ export default function ResumeDetail({ image, summary, source }) {
 
                 </Stack>
 
-                <Typography
-                    dangerouslySetInnerHTML={{ __html: summary }} />
+                {summary ?
+                    <Typography dangerouslySetInnerHTML={{ __html: summary }} />
+                    :
+                    <Skeleton variant='rounded' width='100%' height={250} />}
             </Stack>
         </Card>
     )
