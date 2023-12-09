@@ -15,12 +15,12 @@ export default function NutritionsDetails({ idRecipe, nutrition, ingredientsArra
                 {ingredientsArray != null ? 'Recipe Information' : 'Nutritional Information per 100g'}
             </Typography>
 
-            <Stack 
-            direction={{ xs: 'column', sm: 'row', md: 'row', lg: 'row', xl: 'row' }}
-            padding='1rem'>
+            <Stack
+                direction={{ xs: 'column', sm: 'row', md: 'row', lg: 'row', xl: 'row' }}
+                padding='1rem'>
                 <Stack
-                direction={{ xs: 'column', sm: 'column', md: 'column', lg: 'column', xl: 'row' }}
-                sx={{ margin: 'auto', marginTop: '0rem' }}>
+                    direction={{ xs: 'column', sm: 'column', md: 'column', lg: 'column', xl: 'column' }}
+                    sx={{ margin: 'auto', marginTop: '0rem' }}>
                     {ingredientsArray != null ? <IngredientsDetail ingredientsArray={ingredientsArray} /> : null}
                     <Stack sx={{ margin: 'auto', marginTop: '0rem' }}>
                         <CaloriesBreackDown dataCalories={nutrition?.caloricBreakdown} />
