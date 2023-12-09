@@ -15,7 +15,9 @@ export default function NutritionsDetails({ idRecipe, nutrition, ingredientsArra
                 {ingredientsArray != null ? 'Recipe Information' : 'Nutritional Information per 100g'}
             </Typography>
 
-            <Stack direction={{ xs: 'column', sm: 'column', md: 'row', lg: 'row', xl: 'row' }}>
+            <Stack 
+            direction={{ xs: 'column', sm: 'column', md: 'row', lg: 'row', xl: 'row' }}
+            padding='1rem'>
                 <Stack
                 direction={{ xs: 'column', sm: 'column', md: 'column', lg: 'column', xl: 'row' }}
                 sx={{ margin: 'auto', marginTop: '0rem' }}>
