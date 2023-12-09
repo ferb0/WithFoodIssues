@@ -16,7 +16,7 @@ export default function NutritionsDetails({ idRecipe, nutrition, ingredientsArra
             </Typography>
 
             <Stack 
-            direction={{ xs: 'column', sm: 'column', md: 'row', lg: 'row', xl: 'row' }}
+            direction={{ xs: 'column', sm: 'row', md: 'row', lg: 'row', xl: 'row' }}
             padding='1rem'>
                 <Stack
                 direction={{ xs: 'column', sm: 'column', md: 'column', lg: 'column', xl: 'row' }}
