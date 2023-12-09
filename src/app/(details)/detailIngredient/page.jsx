@@ -19,7 +19,7 @@ export default function DetailResult() {
         fetch(`/api/info_ingredient/${id}`)
             .then(res => res.json())
             .then(res => setInfo(res.data))
-    }, [])
+    }, [id])
 
     return (
         <Stack
