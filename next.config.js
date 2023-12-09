@@ -6,7 +6,7 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'spoonacular.com',
                 port: '',
-                pathname: '/cdn/equipment_250x250/**',
+                pathname: '/cdn/ingredients_250x250/**',
             },
         ],
     },
