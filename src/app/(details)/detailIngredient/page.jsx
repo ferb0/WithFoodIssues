@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 import NutritionsDetails from '../_common/nutritions_detail.jsx'
+import { imageBlur } from '@/global_objects/image_blur_result.js'
 
 let URL_IMAGE = 'https://spoonacular.com/cdn/ingredients_250x250/'
 
@@ -25,9 +26,9 @@ export default function DetailResult() {
             direction={{ xs: 'column', sm: 'column', md: 'row', lg: 'row', xl: 'row' }}>
             <Card sx={{ maxWidth: 345, margin: 'auto', marginTop: '0rem' }}>
                 <Image
-                    src={URL_IMAGE + info.image}
-                    width={500}
-                    height={500}
+                    src={info.image ? `${URL_IMAGE}${info.image}` : ''}
+                    width={250}
+                    height={250}
                     alt={info.name}
                     placeholder='blur'
                     blurDataURL={imageBlur}
