@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Link from 'next/link.js'
 import { useRouter } from 'next/navigation'
-import { AppBar, Box, Toolbar, Typography, TextField, Autocomplete, Link as LinkMUI, Stack } from '@mui/material'
+import { AppBar, Box, Toolbar, Typography, TextField, Autocomplete, Stack } from '@mui/material'
 
 import { linkTheme, styleTextInput } from '../global_objects/theme.js'
 import OptionsMenu from './_menu/menu.jsx'
