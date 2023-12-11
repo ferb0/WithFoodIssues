@@ -26,12 +26,12 @@ export default function NavBar() {
   }, [inputValue])
 
   function handleSubmit(valueSelected) {
-    if (switchSearch) {
-      if (valueSelected)
+    if (valueSelected) {
+      if (switchSearch)
         route.push(`/results_list?search=${valueSelected.name}`)
+      else
+        route.push(`/detailIngredient?id=${valueSelected.id}`)
     }
-    else
-      route.push(`/detailIngredient?id=${valueSelected.id}`)
   }
 
   return (
@@ -60,7 +60,7 @@ export default function NavBar() {
             includeInputInList
             filterSelectedOptions
             noOptionsText='No coincidences'
-            getOptionLabel={(option) => option? `${option.name}` : ''}
+            getOptionLabel={(option) => option ? `${option.name}` : ''}
             isOptionEqualToValue={(option, value) => option.name === value.name}
             onChange={(event, valueSelected) => handleSubmit(valueSelected)}
             onInputChange={(event, newInputValue) => setInputValue(newInputValue)}
