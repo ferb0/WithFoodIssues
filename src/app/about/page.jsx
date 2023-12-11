@@ -35,7 +35,7 @@ export default function About() {
                 href='https://www.ferb.ar/'
                 target='_blank'
                 rel='noreferrer'
-                color='secondary'>
+                underline='none'>
                 Created by ferb.
             </Link>
         </Stack>
