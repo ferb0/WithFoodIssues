@@ -47,14 +47,7 @@ export default function NavBar() {
             </Typography>
             <Typography
               variant='body2'>
-              <LinkMUI
-                href='https://www.ferb.ar/'
-                target='_blank'
-                underline='none'
-                rel='noreferrer'
-                color='secondary'>
-                by ferb
-              </LinkMUI>
+              <Link href={'/about'} style={linkTheme}>by ferb</Link>
             </Typography>
           </Stack>
 
