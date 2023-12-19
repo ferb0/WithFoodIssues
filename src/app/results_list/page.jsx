@@ -27,7 +27,8 @@ export default function ResultList() {
 
     useEffect(() => {
         if (search) {
-            getRecipes(search, { diet: dietOption, intolerances: intolerancesOption, cuisine: cuisineOption }).then(res => setResults(res))
+            getRecipes(search, { diet: dietOption, intolerances: intolerancesOption, cuisine: cuisineOption })
+            .then(res => setResults(res))
             route.push(`/results_list?search=${search}`)
         }
     }, [search, dietOption, intolerancesOption, cuisineOption])
