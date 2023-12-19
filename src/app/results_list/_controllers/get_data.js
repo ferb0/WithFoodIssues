@@ -1,4 +1,4 @@
-import { optionsControl } from './options.js'
+import { objectToQuery, optionsControl } from './options.js'
 
 export async function getRecipes(search, options = {}, offSet = 0) {
     let URL = `/api/search_recipes?ingredients=${search}&offSet=${offSet}`
@@ -7,10 +7,7 @@ export async function getRecipes(search, options = {}, offSet = 0) {
     options = optionsControl(options)
 
     // Se convierte opciones enquery.
-    for (const property in options) {
-        if (options[property])
-            URL += `&${property}=${options[property]}`
-    }
+    URL += objectToQuery(options)
 
     let results = (await fetch(URL)).json()
     return results

@@ -7,3 +7,14 @@ export const optionsControl = (options) => {
         return options
     return {}
 }
+
+export const objectToQuery = (object) => {
+    let url = ''
+
+    for (const property in object) {
+        if (object[property])
+            url += `&${property}=${object[property]}`
+    }
+
+    return url
+}
