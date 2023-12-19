@@ -1,4 +1,4 @@
-import { optionsControl } from './options_control'
+import { optionsControl } from './options.js'
 
 export async function getRecipes(search, options = {}, offSet = 0) {
     let URL = `/api/search_recipes?ingredients=${search}&offSet=${offSet}`
